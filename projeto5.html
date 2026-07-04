@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barbearia Prime</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+
+header{
+    background:#000;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#d4af37;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+.hero{
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1200");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.btn{
+    background:#d4af37;
+    color:black;
+    padding:15px 30px;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+section{
+    padding:80px 10%;
+}
+
+.titulo{
+    text-align:center;
+    margin-bottom:40px;
+    color:#d4af37;
+    font-size:35px;
+}
+
+.servicos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1b1b1b;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.card h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.equipe{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.barbeiro{
+    background:#1b1b1b;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.barbeiro img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+footer{
+    background:#000;
+    padding:30px;
+    text-align:center;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:38px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="logo">Barbearia Prime</div>
+
+    <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#equipe">Equipe</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Seu estilo começa aqui</h1>
+
+    <p>Cortes modernos, barba impecável e atendimento premium.</p>
+
+    <a href="agendamentoP5.html" class="btn">
+        Agendar Agora
+    </a>
+</section>
+
+<section id="servicos">
+
+    <h2 class="titulo">Nossos Serviços</h2>
+
+    <div class="servicos">
+
+        <div class="card">
+            <h3>Corte Masculino</h3>
+            <p>R$ 35,00</p>
+        </div>
+
+        <div class="card">
+            <h3>Barba</h3>
+            <p>R$ 25,00</p>
+        </div>
+
+        <div class="card">
+            <h3>Corte + Barba</h3>
+            <p>R$ 55,00</p>
+        </div>
+
+        <div class="card">
+            <h3>Degradê Premium</h3>
+            <p>R$ 40,00</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="equipe">
+
+    <h2 class="titulo">Nossa Equipe</h2>
+
+    <div class="equipe">
+
+        <div class="barbeiro">
+            <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=800" alt="">
+            <h3>Carlos Silva</h3>
+            <p>Especialista em Degradê</p>
+        </div>
+
+        <div class="barbeiro">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=800" alt="">
+            <h3>João Santos</h3>
+            <p>Especialista em Barba</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contato">
+
+    <h2 class="titulo">Contato</h2>
+
+    <div style="text-align:center;">
+        <p>📞 (11) 99999-9999</p>
+        <br>
+        <a class="btn" href="#">
+            Falar no WhatsApp
+        </a>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Barbearia Prime - Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
