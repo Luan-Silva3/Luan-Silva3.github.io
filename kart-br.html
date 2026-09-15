@@ -1,0 +1,2673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BR Kart Taubaté | Acelere a Emoção</title>
+
+
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #080808;
+  color: white;
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  width: 100%;
+  height: 85px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 7%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.logo,
+.footer-logo {
+  color: white;
+  font-size: 28px;
+  font-weight: 900;
+  text-decoration: none;
+
+  position: relative;
+}
+
+.logo span,
+.footer-logo span {
+  color: #ff5a00;
+}
+
+.logo small,
+.footer-logo small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 5px;
+  text-align: center;
+  color: #aaa;
+}
+
+
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #ff5a00;
+}
+
+
+.btn-agendar,
+.btn-primary {
+  border: none;
+  background: #ff5a00;
+  color: white;
+
+  padding: 15px 23px;
+
+  font-size: 12px;
+  font-weight: 800;
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  clip-path: polygon(
+    8px 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%,
+    0 8px
+  );
+}
+
+.btn-agendar:hover,
+.btn-primary:hover {
+  background: #ff762b;
+  transform: translateY(-3px);
+}
+
+
+.menu-mobile {
+  display: none;
+
+  border: none;
+  background: transparent;
+  color: white;
+
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 120px 7% 70px;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.8) 40%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url("img/pista.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* Enquanto você ainda não colocar a foto */
+.hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(255, 90, 0, 0.25),
+      transparent 35%
+    );
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 720px;
+}
+
+
+.tag,
+.section-tag {
+  display: inline-block;
+
+  color: #ff5a00;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+
+  margin-bottom: 20px;
+}
+
+
+.hero h1 {
+  font-size: clamp(52px, 8vw, 105px);
+  line-height: 0.9;
+
+  font-weight: 900;
+  letter-spacing: -4px;
+
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: #ff5a00;
+  display: block;
+}
+
+
+.hero p {
+  max-width: 560px;
+
+  color: #d0d0d0;
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  margin-bottom: 35px;
+}
+
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+
+.btn-secondary {
+  border: 1px solid #777;
+
+  color: white;
+  text-decoration: none;
+
+  padding: 15px 25px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  border-color: #ff5a00;
+  color: #ff5a00;
+}
+
+
+.hero-card {
+  position: absolute;
+
+  right: 7%;
+  bottom: 90px;
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 18px 25px;
+
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(10px);
+
+  border-left: 4px solid #ff5a00;
+}
+
+
+.card-icon {
+  font-size: 35px;
+}
+
+
+.hero-card span {
+  display: block;
+
+  color: #aaa;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  margin-bottom: 5px;
+}
+
+.hero-card strong {
+  font-size: 14px;
+}
+
+
+.scroll-indicator {
+  position: absolute;
+
+  left: 7%;
+  bottom: 30px;
+
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.scroll-indicator span {
+  color: #888;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.scroll-line {
+  width: 60px;
+  height: 1px;
+
+  background: #ff5a00;
+}
+
+
+/* =========================
+   DESTAQUES
+========================= */
+
+.highlights {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  background: #111;
+
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+
+.highlight {
+  padding: 35px 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  border-right: 1px solid #222;
+
+  transition: 0.3s;
+}
+
+.highlight:hover {
+  background: #181818;
+}
+
+
+.highlight-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ff5a00;
+
+  font-size: 22px;
+}
+
+
+.highlight h3 {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.highlight p {
+  color: #888;
+  font-size: 11px;
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.about {
+  min-height: 700px;
+
+  padding: 120px 7%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+  gap: 80px;
+}
+.about-content {
+    max-width: 500px;
+}
+
+.about-image {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+.about-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+
+.image-placeholder span {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.image-placeholder p {
+  color: #777;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+
+.experience-box {
+  position: absolute;
+
+  right: 0;
+  bottom: 25px;
+
+  background: #ff5a00;
+
+  padding: 25px;
+  min-width: 130px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-box strong {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.experience-box span {
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+.about h2,
+.cta h2 {
+  font-size: clamp(35px, 5vw, 65px);
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -2px;
+
+  margin-bottom: 30px;
+}
+
+.about h2 span,
+.cta h2 strong {
+  color: #ff5a00;
+}
+
+
+.about-content > p {
+  max-width: 550px;
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+
+.about-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+
+  margin-bottom: 35px;
+}
+
+
+.about-list div {
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.about-list span {
+  color: #ff5a00;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+  min-height: 550px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 80px 20px;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url("img/pista.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+
+.cta-content {
+  max-width: 850px;
+}
+
+
+.cta-content > span {
+  display: block;
+
+  color: #ff5a00;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 20px;
+}
+
+
+.cta p {
+  color: #aaa;
+
+  margin-bottom: 35px;
+
+  line-height: 1.7;
+}
+
+
+.big-button {
+  padding: 20px 35px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 70px 7% 30px;
+
+  background: #050505;
+
+  text-align: center;
+}
+
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+
+footer > p {
+  color: #888;
+  margin-bottom: 25px;
+}
+
+
+.footer-contact {
+  color: #bbb;
+
+  line-height: 2;
+
+  font-size: 13px;
+
+  margin-bottom: 50px;
+}
+
+
+.footer-bottom {
+  padding-top: 25px;
+
+  border-top: 1px solid #222;
+
+  color: #555;
+
+  font-size: 10px;
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+  position: fixed;
+
+  right: 25px;
+  bottom: 25px;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #25d366;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 50%;
+
+  font-size: 28px;
+
+  z-index: 1000;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  transition: 0.3s;
+}
+
+.whatsapp:hover {
+  transform: scale(1.1);
+}
+
+
+/* =========================
+   MENU MOBILE
+========================= */
+
+.mobile-menu {
+  position: fixed;
+
+  top: 0;
+  right: -100%;
+
+  width: 100%;
+  height: 100vh;
+
+  background: #090909;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 30px;
+
+  z-index: 999;
+
+  transition: 0.4s;
+}
+
+
+.mobile-menu.active {
+  right: 0;
+}
+
+
+.mobile-menu a {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 28px;
+  font-weight: 800;
+}
+
+
+.mobile-menu button {
+  position: absolute;
+
+  top: 25px;
+  right: 35px;
+
+  border: none;
+  background: transparent;
+
+  color: #ff5a00;
+
+  font-size: 50px;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1000px) {
+
+  .menu,
+  .header .btn-agendar {
+    display: none;
+  }
+
+  .menu-mobile {
+    display: block;
+  }
+
+
+  .highlights {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  .about {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .header {
+    height: 70px;
+    padding: 0 5%;
+  }
+
+
+  .hero {
+    padding: 110px 5% 120px;
+    align-items: center;
+  }
+
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+
+  .hero p {
+    font-size: 14px;
+  }
+
+
+  .hero-card {
+    display: none;
+  }
+
+
+  .scroll-indicator {
+    left: 5%;
+  }
+
+
+  .highlights {
+    grid-template-columns: 1fr;
+  }
+
+
+  .highlight {
+    border-bottom: 1px solid #222;
+  }
+
+
+  .about {
+    padding: 80px 5%;
+  }
+
+
+  .about-image,
+  .image-placeholder {
+    min-height: 350px;
+  }
+
+
+  .experience-box {
+    right: 15px;
+    bottom: 15px;
+  }
+
+
+  .about-list {
+    grid-template-columns: 1fr;
+  }
+
+
+  .cta {
+    min-height: 500px;
+  }
+
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .hero-buttons {
+    width: 100%;
+  }
+
+}
+
+/* =========================
+   VALORES
+========================= */
+
+.pricing {
+  padding: 120px 7%;
+  background: #0d0d0d;
+
+  position: relative;
+}
+
+
+/* CABEÇALHO */
+
+.pricing-header {
+  max-width: 700px;
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+.pricing-header h2 {
+  font-size: clamp(40px, 5vw, 65px);
+
+  line-height: 0.95;
+
+  font-weight: 900;
+
+  letter-spacing: -2px;
+
+  margin-bottom: 25px;
+}
+
+.pricing-header h2 span {
+  color: #ff5a00;
+}
+
+.pricing-header p {
+  color: #888;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+}
+
+
+/* CARDS */
+
+.pricing-cards {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+
+.pricing-card {
+  background: #151515;
+
+  border: 1px solid #292929;
+
+  padding: 40px 30px;
+
+  position: relative;
+
+  transition: 0.35s;
+}
+
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #ff5a00;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+
+/* CARD DESTAQUE */
+
+.pricing-card.featured {
+  border: 1px solid #ff5a00;
+
+  transform: translateY(-15px);
+}
+
+.pricing-card.featured:hover {
+  transform: translateY(-23px);
+}
+
+
+/* ÍCONE */
+
+.pricing-icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ff5a00;
+
+  font-size: 28px;
+
+  margin-bottom: 25px;
+}
+
+
+/* LABEL */
+
+.card-label {
+  display: block;
+
+  color: #ff5a00;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+
+/* TÍTULO */
+
+.pricing-card h3 {
+  font-size: 30px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+
+  margin-bottom: 20px;
+}
+
+
+/* DESCRIÇÃO */
+
+.card-description {
+  color: #888;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  min-height: 70px;
+
+  margin-bottom: 25px;
+}
+
+
+/* PREÇO */
+
+.price {
+  border-top: 1px solid #292929;
+  border-bottom: 1px solid #292929;
+
+  padding: 20px 0;
+
+  margin-bottom: 25px;
+}
+
+
+.price small {
+  display: block;
+
+  color: #777;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 5px;
+}
+
+
+.price strong {
+  color: white;
+
+  font-size: 30px;
+
+  font-weight: 900;
+}
+
+
+.event-price strong {
+  font-size: 20px;
+
+  color: #ff5a00;
+}
+
+
+/* LISTA */
+
+.pricing-card ul {
+  list-style: none;
+
+  margin-bottom: 30px;
+}
+
+
+.pricing-card li {
+  color: #bbb;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  margin-bottom: 12px;
+}
+
+
+.pricing-card li::first-letter {
+  color: #ff5a00;
+}
+
+
+/* BOTÃO */
+
+.price-button {
+  width: 100%;
+
+  padding: 17px;
+
+  border: 1px solid #ff5a00;
+
+  background: transparent;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+
+.price-button:hover {
+  background: #ff5a00;
+
+  color: white;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+  .pricing-cards {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+
+  .pricing-card.featured {
+    transform: none;
+  }
+
+  .pricing-card.featured:hover {
+    transform: translateY(-8px);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .pricing {
+    padding: 80px 5%;
+  }
+
+  .pricing-card {
+    padding: 30px 25px;
+  }
+
+}
+
+/* =========================
+   MODAL DE AGENDAMENTO
+========================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  z-index: 2000;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s ease;
+}
+
+
+/* MODAL ABERTO */
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* CAIXA DO MODAL */
+
+.booking-modal {
+  width: 100%;
+  max-width: 650px;
+
+  max-height: 90vh;
+  overflow-y: auto;
+
+  background: #111;
+
+  border: 1px solid #292929;
+
+  padding: 45px;
+
+  position: relative;
+
+  transform: translateY(30px);
+
+  transition: 0.3s ease;
+}
+
+
+.modal-overlay.active .booking-modal {
+  transform: translateY(0);
+}
+
+
+/* BOTÃO FECHAR */
+
+.modal-close {
+  position: absolute;
+
+  top: 15px;
+  right: 20px;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #777;
+
+  font-size: 35px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+
+.modal-close:hover {
+  color: #ff5a00;
+
+  transform: rotate(90deg);
+}
+
+
+/* CABEÇALHO */
+
+.booking-header {
+  margin-bottom: 35px;
+}
+
+
+.booking-header h2 {
+  font-size: 42px;
+
+  line-height: 0.95;
+
+  font-weight: 900;
+
+  letter-spacing: -2px;
+
+  margin-bottom: 15px;
+}
+
+
+.booking-header h2 span {
+  color: #ff5a00;
+}
+
+
+.booking-header p {
+  color: #888;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* FORMULÁRIO */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+
+.form-group label {
+  display: block;
+
+  color: #aaa;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 8px;
+}
+
+
+.form-group label small {
+  color: #555;
+
+  font-size: 8px;
+
+  letter-spacing: 0;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  padding: 15px;
+
+  border: 1px solid #292929;
+
+  background: #191919;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  outline: none;
+
+  border-radius: 0;
+
+  transition: 0.3s;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #ff5a00;
+
+  background: #1c1c1c;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #555;
+}
+
+
+.form-group select {
+  cursor: pointer;
+}
+
+
+.form-group input[type="date"] {
+  color-scheme: dark;
+}
+
+
+/* DATA + PILOTOS */
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+}
+
+
+/* OBSERVAÇÃO */
+
+.form-group textarea {
+  resize: vertical;
+
+  min-height: 90px;
+}
+
+
+/* BOTÃO ENVIAR */
+
+.booking-submit {
+  width: 100%;
+
+  padding: 18px;
+
+  border: none;
+
+  background: #ff5a00;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  margin-top: 10px;
+
+  transition: 0.3s;
+
+  clip-path: polygon(
+    8px 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%,
+    0 8px
+  );
+}
+
+
+.booking-submit:hover {
+  background: #ff762b;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   TELA DE CONFIRMAÇÃO
+========================= */
+
+.booking-success {
+  display: none;
+
+  text-align: center;
+}
+
+
+.booking-success.active {
+  display: block;
+}
+
+
+.success-icon {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #ff5a00;
+
+  border-radius: 50%;
+
+  font-size: 35px;
+
+  font-weight: 900;
+}
+
+
+.booking-success h2 {
+  font-size: 40px;
+
+  line-height: 0.95;
+
+  font-weight: 900;
+
+  letter-spacing: -2px;
+
+  margin-bottom: 15px;
+}
+
+
+.booking-success h2 span {
+  display: block;
+
+  color: #ff5a00;
+}
+
+
+.booking-success > p {
+  color: #888;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  margin-bottom: 25px;
+}
+
+
+/* RESUMO */
+
+.booking-summary {
+  border: 1px solid #292929;
+
+  background: #171717;
+
+  text-align: left;
+
+  margin-bottom: 25px;
+}
+
+
+.summary-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 16px 20px;
+
+  border-bottom: 1px solid #292929;
+}
+
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+
+.summary-item span {
+  color: #777;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+.summary-item strong {
+  color: white;
+
+  font-size: 12px;
+
+  text-align: right;
+}
+
+
+/* MENSAGEM */
+
+.success-message {
+  color: #aaa !important;
+
+  margin-bottom: 20px !important;
+}
+
+
+/* BOTÕES DA CONFIRMAÇÃO */
+
+.success-buttons {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+.whatsapp-submit {
+  display: block;
+
+  text-decoration: none;
+
+  text-align: center;
+
+  margin-top: 0;
+}
+
+
+.new-booking {
+  width: 100%;
+
+  padding: 16px;
+
+  background: transparent;
+
+  border: 1px solid #333;
+
+  color: #aaa;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+
+.new-booking:hover {
+  border-color: #ff5a00;
+
+  color: #ff5a00;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 600px) {
+
+  .booking-modal {
+    padding: 30px 20px;
+
+    max-height: 95vh;
+  }
+
+
+  .booking-header h2 {
+    font-size: 35px;
+  }
+
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+
+  .booking-success h2 {
+    font-size: 32px;
+  }
+
+
+  .summary-item {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+  }
+
+
+  .summary-item strong {
+    text-align: left;
+  }
+
+}
+
+</style>
+</head>
+
+
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <a href="#" class="logo">
+      <span>BR</span> KART
+      <small>TAUBATÉ</small>
+    </a>
+
+    <nav class="menu">
+      <a href="#inicio">Início</a>
+      <a href="#pista">A pista</a>
+      <a href="#valores">Valores</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <button class="btn-agendar" id="btnAgendar">
+      AGENDAR AGORA
+    </button>
+
+    <button class="menu-mobile" id="menuMobile">
+      ☰
+    </button>
+
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero" id="inicio">
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+
+        <div class="tag">
+          🏁 A EMOÇÃO COMEÇA AQUI
+        </div>
+
+        <h1>
+          ACELERE A SUA
+          <span>EMOÇÃO.</span>
+        </h1>
+
+        <p>
+          Sinta a velocidade, desafie seus amigos e viva uma experiência
+          inesquecível na pista.
+        </p>
+
+        <div class="hero-buttons">
+
+          <button class="btn-primary" id="btnReserva">
+            🏁 AGENDAR MINHA CORRIDA
+          </button>
+
+          <a href="#pista" class="btn-secondary">
+            CONHEÇA A PISTA
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-card">
+
+        <div class="card-icon">🏎️</div>
+
+        <div>
+          <span>BR KART TAUBATÉ</span>
+          <strong>PRONTO PARA A LARGADA?</strong>
+        </div>
+
+      </div>
+
+      <div class="scroll-indicator">
+        <span>ROLE PARA EXPLORAR</span>
+        <div class="scroll-line"></div>
+      </div>
+
+    </section>
+
+
+    <!-- DESTAQUES -->
+    <section class="highlights">
+
+      <div class="highlight">
+        <div class="highlight-icon">🏎️</div>
+
+        <div>
+          <h3>ADRENALINA</h3>
+          <p>Velocidade e emoção para você.</p>
+        </div>
+      </div>
+
+
+      <div class="highlight">
+        <div class="highlight-icon">👥</div>
+
+        <div>
+          <h3>PARA TODAS AS IDADES</h3>
+          <p>Diversão para amigos e família.</p>
+        </div>
+      </div>
+
+
+      <div class="highlight">
+        <div class="highlight-icon">🏁</div>
+
+        <div>
+          <h3>DESAFIE SEUS AMIGOS</h3>
+          <p>Mostre quem é o mais rápido.</p>
+        </div>
+      </div>
+
+
+      <div class="highlight">
+        <div class="highlight-icon">📍</div>
+
+        <div>
+          <h3>TAUBATÉ - SP</h3>
+          <p>Uma experiência sobre rodas.</p>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- SOBRE -->
+    <section class="about" id="pista">
+
+      <div class="about-image">
+
+        <!-- Depois vamos colocar uma foto real da pista aqui -->
+        <div class="image-placeholder">
+          <img src="./img/pistaKart.jpg" alt="Pista">
+        </div>
+
+        <div class="experience-box">
+          <strong>100%</strong>
+          <span>EMOÇÃO</span>
+        </div>
+
+      </div>
+
+
+      <div class="about-content">
+
+        <span class="section-tag">
+          CONHEÇA A BR KART
+        </span>
+
+        <h2>
+          MUITO MAIS QUE UMA
+          <span>CORRIDA.</span>
+        </h2>
+
+        <p>
+          Aqui você encontra velocidade, competição e diversão.
+          Chame seus amigos, acelere e viva a experiência de estar
+          em uma verdadeira pista de kart.
+        </p>
+
+        <div class="about-list">
+
+          <div>
+            <span>✓</span>
+            Experiência para grupos
+          </div>
+
+          <div>
+            <span>✓</span>
+            Diversão para todas as idades
+          </div>
+
+          <div>
+            <span>✓</span>
+            Eventos e comemorações
+          </div>
+
+          <div>
+            <span>✓</span>
+            Competição e adrenalina
+          </div>
+
+        </div>
+
+        <button class="btn-primary" id="btnAgendar2">
+          QUERO ACELERAR
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- VALORES -->
+<section class="pricing" id="valores">
+
+  <div class="pricing-header">
+
+    <span class="section-tag">
+      ESCOLHA SUA EXPERIÊNCIA
+    </span>
+
+    <h2>
+      PREPARE-SE PARA
+      <span>ACELERAR.</span>
+    </h2>
+
+    <p>
+      Escolha a melhor experiência para você, reúna seus amigos
+      e venha viver a emoção da BR Kart.
+    </p>
+
+  </div>
+
+
+  <div class="pricing-cards">
+
+    <!-- CORRIDA INDIVIDUAL -->
+    <div class="pricing-card">
+
+      <div class="pricing-icon">
+        🏎️
+      </div>
+
+      <span class="card-label">
+        MAIS PROCURADO
+      </span>
+
+      <h3>
+        CORRIDA<br>
+        INDIVIDUAL
+      </h3>
+
+      <p class="card-description">
+        Perfeita para quem quer sentir a velocidade
+        e testar seus limites na pista.
+      </p>
+
+      <div class="price">
+        <small>A PARTIR DE</small>
+        <strong>R$ XX</strong>
+      </div>
+
+      <ul>
+        <li>✓ Corrida de kart</li>
+        <li>✓ Equipamentos de segurança</li>
+        <li>✓ Experiência na pista</li>
+      </ul>
+
+      <button class="price-button" data-tipo="Corrida Individual">
+        AGENDAR CORRIDA
+      </button>
+
+    </div>
+
+
+    <!-- GRUPO -->
+    <div class="pricing-card featured">
+
+      <div class="pricing-icon">
+        🏁
+      </div>
+
+      <span class="card-label">
+        DESAFIE SEUS AMIGOS
+      </span>
+
+      <h3>
+        CORRIDA<br>
+        EM GRUPO
+      </h3>
+
+      <p class="card-description">
+        Reúna sua galera e descubra quem realmente
+        merece o título de mais rápido.
+      </p>
+
+      <div class="price">
+        <small>A PARTIR DE</small>
+        <strong>R$ XX</strong>
+      </div>
+
+      <ul>
+        <li>✓ Corrida para grupos</li>
+        <li>✓ Competição entre amigos</li>
+        <li>✓ Experiência completa</li>
+      </ul>
+
+      <button class="price-button" data-tipo="Corrida em Grupo">
+        AGENDAR GRUPO
+      </button>
+
+    </div>
+
+
+    <!-- EVENTOS -->
+    <div class="pricing-card">
+
+      <div class="pricing-icon">
+        🎉
+      </div>
+
+      <span class="card-label">
+        MOMENTOS ESPECIAIS
+      </span>
+
+      <h3>
+        EVENTOS &
+        <br>
+        ANIVERSÁRIOS
+      </h3>
+
+      <p class="card-description">
+        Comemore de um jeito diferente com sua família,
+        amigos ou equipe.
+      </p>
+
+      <div class="price event-price">
+        <small>FALE CONOSCO</small>
+        <strong>PERSONALIZADO</strong>
+      </div>
+
+      <ul>
+        <li>✓ Aniversários</li>
+        <li>✓ Eventos corporativos</li>
+        <li>✓ Grupos e confraternizações</li>
+      </ul>
+
+      <button class="price-button" data-tipo="Evento">
+        SOLICITAR ORÇAMENTO
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- CTA -->
+    <section class="cta">
+
+      <div class="cta-content">
+
+        <span>🏁 SUA VEZ DE ACELERAR</span>
+
+        <h2>
+          VOCÊ ESTÁ PRONTO PARA
+          <strong>IR PARA A PISTA?</strong>
+        </h2>
+
+        <p>
+          Escolha seu horário e prepare-se para uma experiência cheia de emoção.
+        </p>
+
+        <button class="btn-primary big-button" id="btnFinal">
+          AGENDAR MINHA CORRIDA
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+<!-- MODAL DE AGENDAMENTO -->
+
+<div class="modal-overlay" id="modalAgendamento">
+
+    <div class="booking-modal">
+
+        <button class="modal-close" id="fecharModal">
+            ×
+        </button>
+
+        <div class="booking-header">
+            <span class="section-tag">BR KART TAUBATÉ</span>
+
+            <h2>
+                AGENDE SUA <span>CORRIDA.</span>
+            </h2>
+
+            <p>
+                Preencha os dados abaixo para solicitar seu horário.
+            </p>
+        </div>
+
+        <form id="formAgendamento">
+
+            <div class="form-group">
+                <label for="tipoCorrida">TIPO DE EXPERIÊNCIA</label>
+
+                <select id="tipoCorrida" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="Corrida Individual">
+                        Corrida Individual
+                    </option>
+                    <option value="Corrida em Grupo">
+                        Corrida em Grupo
+                    </option>
+                    <option value="Evento">
+                        Evento / Aniversário
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="nomeCliente">SEU NOME</label>
+
+                <input
+                    type="text"
+                    id="nomeCliente"
+                    placeholder="Digite seu nome"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="whatsappCliente">WHATSAPP</label>
+
+                <input
+                    type="tel"
+                    id="whatsappCliente"
+                    placeholder="(12) 99999-9999"
+                    required
+                >
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="dataCorrida">DATA</label>
+
+                    <input
+                        type="date"
+                        id="dataCorrida"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="quantidadePilotos">PILOTOS</label>
+
+                    <select id="quantidadePilotos" required>
+                        <option value="">Quantidade</option>
+                        <option value="1">1 piloto</option>
+                        <option value="2">2 pilotos</option>
+                        <option value="3">3 pilotos</option>
+                        <option value="4">4 pilotos</option>
+                        <option value="5">5 pilotos</option>
+                        <option value="6">6 pilotos</option>
+                        <option value="7">7 pilotos</option>
+                        <option value="8">8 pilotos</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="horarioCorrida">
+                    HORÁRIO DESEJADO
+                </label>
+
+                <select id="horarioCorrida" required>
+
+                    <option value="">
+                        Selecione o horário
+                    </option>
+
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                    <option value="16:30">16:30</option>
+                    <option value="17:00">17:00</option>
+                    <option value="17:30">17:30</option>
+                    <option value="18:00">18:00</option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+
+                <label for="observacao">
+                    OBSERVAÇÃO
+                    <small>(opcional)</small>
+                </label>
+
+                <textarea
+                    id="observacao"
+                    rows="3"
+                    placeholder="Alguma informação adicional?"
+                ></textarea>
+
+            </div>
+
+            <button
+                type="submit"
+                class="booking-submit"
+            >
+                CONTINUAR AGENDAMENTO 🏁
+            </button>
+
+        </form>
+
+        <!-- CONFIRMAÇÃO -->
+
+        <div
+            class="booking-success"
+            id="bookingSuccess"
+        >
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <span class="section-tag">
+                SOLICITAÇÃO RECEBIDA
+            </span>
+
+            <h2>
+                AGENDAMENTO
+                <span>QUASE PRONTO!</span>
+            </h2>
+
+            <p>
+                Confira os dados da sua corrida abaixo.
+            </p>
+
+            <div class="booking-summary">
+
+                <div class="summary-item">
+                    <span>EXPERIÊNCIA</span>
+                    <strong id="resumoTipo">-</strong>
+                </div>
+
+                <div class="summary-item">
+                    <span>NOME</span>
+                    <strong id="resumoNome">-</strong>
+                </div>
+
+                <div class="summary-item">
+                    <span>DATA</span>
+                    <strong id="resumoData">-</strong>
+                </div>
+
+                <div class="summary-item">
+                    <span>HORÁRIO</span>
+                    <strong id="resumoHorario">-</strong>
+                </div>
+
+                <div class="summary-item">
+                    <span>PILOTOS</span>
+                    <strong id="resumoPilotos">-</strong>
+                </div>
+
+            </div>
+
+            <p class="success-message">
+                Para finalizar sua solicitação, entre em contato
+                pelo WhatsApp da BR Kart.
+            </p>
+
+            <div class="success-buttons">
+
+                <a
+                    href="#"
+                    id="whatsappAgendamento"
+                    target="_blank"
+                    class="booking-submit whatsapp-submit"
+                >
+                    CONFIRMAR PELO WHATSAPP 📱
+                </a>
+
+                <button
+                    type="button"
+                    id="novoAgendamento"
+                    class="new-booking"
+                >
+                    FAZER OUTRO AGENDAMENTO
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+  <!-- FOOTER -->
+  <footer id="contato">
+
+    <div class="footer-logo">
+      <span>BR</span> KART
+      <small>TAUBATÉ</small>
+    </div>
+
+    <p>
+      Acelere a emoção em Taubaté.
+    </p>
+
+    <div class="footer-contact">
+      📍 Atrás do Ginásio Abaeté<br>
+      📱 WhatsApp: (12) 99618-7159
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 BR Kart Taubaté - Todos os direitos reservados.
+    </div>
+
+  </footer>
+
+
+  <!-- BOTÃO FLUTUANTE -->
+  <a
+    href="https://wa.me/5512996187159"
+    target="_blank"
+    class="whatsapp"
+  >
+    💬
+  </a>
+
+
+  <!-- MENU MOBILE -->
+  <div class="mobile-menu" id="mobileMenu">
+
+    <button id="fecharMenu">×</button>
+
+    <a href="#inicio">Início</a>
+    <a href="#pista">A pista</a>
+    <a href="#valores">Valores</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#contato">Contato</a>
+
+  </div>
+
+
+  <script>// =========================
+// BOTÕES DE AGENDAMENTO
+// =========================
+
+const btnAgendar = document.getElementById("btnAgendar");
+const btnReserva = document.getElementById("btnReserva");
+const btnAgendar2 = document.getElementById("btnAgendar2");
+const btnFinal = document.getElementById("btnFinal");
+
+
+// =========================
+// ELEMENTOS DO MODAL
+// =========================
+
+const modalAgendamento = document.getElementById("modalAgendamento");
+const fecharModal = document.getElementById("fecharModal");
+
+const formAgendamento = document.getElementById("formAgendamento");
+const bookingSuccess = document.getElementById("bookingSuccess");
+
+const novoAgendamento = document.getElementById("novoAgendamento");
+
+
+// =========================
+// CAMPOS DO FORMULÁRIO
+// =========================
+
+const tipoCorrida = document.getElementById("tipoCorrida");
+const nomeCliente = document.getElementById("nomeCliente");
+const whatsappCliente = document.getElementById("whatsappCliente");
+const dataCorrida = document.getElementById("dataCorrida");
+const quantidadePilotos = document.getElementById("quantidadePilotos");
+const horarioCorrida = document.getElementById("horarioCorrida");
+const observacao = document.getElementById("observacao");
+
+
+// =========================
+// CAMPOS DO RESUMO
+// =========================
+
+const resumoTipo = document.getElementById("resumoTipo");
+const resumoNome = document.getElementById("resumoNome");
+const resumoData = document.getElementById("resumoData");
+const resumoHorario = document.getElementById("resumoHorario");
+const resumoPilotos = document.getElementById("resumoPilotos");
+
+const whatsappAgendamento =
+    document.getElementById("whatsappAgendamento");
+
+
+// =========================
+// ABRIR MODAL
+// =========================
+
+function abrirAgendamento(tipo = "") {
+
+    modalAgendamento.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+    // Se veio de um plano específico
+    if (tipo) {
+        tipoCorrida.value = tipo;
+    }
+
+}
+
+
+// =========================
+// FECHAR MODAL
+// =========================
+
+function fecharAgendamento() {
+
+    modalAgendamento.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+// =========================
+// BOTÕES PRINCIPAIS
+// =========================
+
+btnAgendar.addEventListener("click", () => {
+    abrirAgendamento();
+});
+
+btnReserva.addEventListener("click", () => {
+    abrirAgendamento();
+});
+
+btnAgendar2.addEventListener("click", () => {
+    abrirAgendamento();
+});
+
+btnFinal.addEventListener("click", () => {
+    abrirAgendamento();
+});
+
+
+// =========================
+// BOTÃO X
+// =========================
+
+fecharModal.addEventListener("click", () => {
+    fecharAgendamento();
+});
+
+
+// =========================
+// CLICAR FORA DO MODAL
+// =========================
+
+modalAgendamento.addEventListener("click", (event) => {
+
+    if (event.target === modalAgendamento) {
+        fecharAgendamento();
+    }
+
+});
+
+
+// =========================
+// BOTÕES DOS PLANOS
+// =========================
+
+const botoesPrecos =
+    document.querySelectorAll(".price-button");
+
+botoesPrecos.forEach((botao) => {
+
+    botao.addEventListener("click", () => {
+
+        const tipo = botao.dataset.tipo;
+
+        abrirAgendamento(tipo);
+
+    });
+
+});
+
+
+// =========================
+// DATA MÍNIMA
+// =========================
+
+const hoje = new Date();
+
+const ano = hoje.getFullYear();
+
+const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+
+const dia = String(hoje.getDate()).padStart(2, "0");
+
+dataCorrida.min = `${ano}-${mes}-${dia}`;
+
+
+// =========================
+// MÁSCARA WHATSAPP
+// =========================
+
+whatsappCliente.addEventListener("input", () => {
+
+    let valor = whatsappCliente.value.replace(/\D/g, "");
+
+    if (valor.length > 11) {
+        valor = valor.substring(0, 11);
+    }
+
+    if (valor.length <= 10) {
+
+        valor = valor.replace(
+            /^(\d{2})(\d)/,
+            "($1) $2"
+        );
+
+        valor = valor.replace(
+            /(\d{4})(\d)/,
+            "$1-$2"
+        );
+
+    } else {
+
+        valor = valor.replace(
+            /^(\d{2})(\d)/,
+            "($1) $2"
+        );
+
+        valor = valor.replace(
+            /(\d{5})(\d)/,
+            "$1-$2"
+        );
+
+    }
+
+    whatsappCliente.value = valor;
+
+});
+
+
+// =========================
+// ENVIAR AGENDAMENTO
+// =========================
+
+formAgendamento.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+
+    // =========================
+    // PEGAR VALORES
+    // =========================
+
+    const tipo = tipoCorrida.value;
+
+    const nome = nomeCliente.value.trim();
+
+    const whatsapp = whatsappCliente.value.trim();
+
+    const data = dataCorrida.value;
+
+    const pilotos = quantidadePilotos.value;
+
+    const horario = horarioCorrida.value;
+
+    const obs = observacao.value.trim();
+
+
+    // =========================
+    // VALIDAR WHATSAPP
+    // =========================
+
+    const numerosWhatsApp =
+        whatsapp.replace(/\D/g, "");
+
+    if (numerosWhatsApp.length < 10) {
+
+        alert("Digite um WhatsApp válido.");
+
+        whatsappCliente.focus();
+
+        return;
+
+    }
+
+
+    // =========================
+    // FORMATAR DATA
+    // =========================
+
+    const partesData = data.split("-");
+
+    const dataFormatada =
+        `${partesData[2]}/${partesData[1]}/${partesData[0]}`;
+
+
+    // =========================
+    // PREENCHER RESUMO
+    // =========================
+
+    resumoTipo.textContent = tipo;
+
+    resumoNome.textContent = nome;
+
+    resumoData.textContent = dataFormatada;
+
+    resumoHorario.textContent = horario;
+
+    resumoPilotos.textContent =
+        pilotos + (pilotos === "1"
+            ? " piloto"
+            : " pilotos");
+
+
+    // =========================
+    // MONTAR MENSAGEM WHATSAPP
+    // =========================
+
+    let mensagem =
+        `🏁 *NOVO AGENDAMENTO - BR KART TAUBATÉ*%0A%0A` +
+
+        `🏎️ *Experiência:* ${tipo}%0A` +
+
+        `👤 *Nome:* ${nome}%0A` +
+
+        `📅 *Data:* ${dataFormatada}%0A` +
+
+        `⏰ *Horário:* ${horario}%0A` +
+
+        `🏁 *Pilotos:* ${pilotos}%0A` +
+
+        `📱 *WhatsApp:* ${whatsapp}`;
+
+
+    if (obs) {
+
+        mensagem +=
+            `%0A%0A📝 *Observação:* ${obs}`;
+
+    }
+
+
+    // =========================
+    // LINK WHATSAPP
+    // =========================
+
+    const numeroBRKart =
+        "5512996187159";
+
+    const linkWhatsApp =
+        `https://wa.me/${numeroBRKart}?text=${mensagem}`;
+
+
+    whatsappAgendamento.href =
+        linkWhatsApp;
+
+
+    // =========================
+    // MOSTRAR CONFIRMAÇÃO
+    // =========================
+
+    formAgendamento.style.display = "none";
+
+    bookingSuccess.classList.add("active");
+
+});
+
+
+// =========================
+// NOVO AGENDAMENTO
+// =========================
+
+novoAgendamento.addEventListener("click", () => {
+
+    formAgendamento.reset();
+
+    bookingSuccess.classList.remove("active");
+
+    formAgendamento.style.display = "block";
+
+    // Voltar a limitar a data para hoje
+    dataCorrida.min =
+        `${ano}-${mes}-${dia}`;
+
+});
+
+
+// =========================
+// MENU MOBILE
+// =========================
+
+const menuMobile =
+    document.getElementById("menuMobile");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+const fecharMenu =
+    document.getElementById("fecharMenu");
+
+
+menuMobile.addEventListener("click", () => {
+
+    mobileMenu.classList.add("active");
+
+});
+
+
+fecharMenu.addEventListener("click", () => {
+
+    mobileMenu.classList.remove("active");
+
+});
+
+
+const linksMenu =
+    mobileMenu.querySelectorAll("a");
+
+
+linksMenu.forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("active");
+
+    });
+
+});</script>
+
+</body>
+</html>
