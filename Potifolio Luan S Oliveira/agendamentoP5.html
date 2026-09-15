@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agendamento - Barbearia Prime</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:600px;
+    background:#1b1b1b;
+    padding:30px;
+    border-radius:12px;
+}
+
+h1{
+    text-align:center;
+    color:#d4af37;
+    margin-bottom:25px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+select{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+}
+
+button{
+    background:#d4af37;
+    color:black;
+    border:none;
+    padding:15px;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.voltar{
+    display:block;
+    text-align:center;
+    margin-top:15px;
+    color:#d4af37;
+    text-decoration:none;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+```
+<h1>Agendar Horário</h1>
+
+<form id="formAgendamento">
+
+    <input
+        type="text"
+        id="nome"
+        placeholder="Nome completo"
+        required
+    >
+
+    <input
+        type="tel"
+        id="telefone"
+        placeholder="Telefone"
+        required
+    >
+
+    <select id="servico" required>
+        <option value="">Escolha um serviço</option>
+        <option>Corte Masculino</option>
+        <option>Barba</option>
+        <option>Corte + Barba</option>
+        <option>Degradê Premium</option>
+    </select>
+
+    <select id="barbeiro" required>
+        <option value="">Escolha um barbeiro</option>
+        <option>Carlos Silva</option>
+        <option>João Santos</option>
+    </select>
+
+    <input
+        type="date"
+        id="data"
+        required
+    >
+
+    <select id="horario" required>
+        <option value="">Escolha um horário</option>
+        <option>09:00</option>
+        <option>10:00</option>
+        <option>11:00</option>
+        <option>13:00</option>
+        <option>14:00</option>
+        <option>15:00</option>
+        <option>16:00</option>
+        <option>17:00</option>
+    </select>
+
+    <button type="submit">
+        Agendar
+    </button>
+
+</form>
+
+<a href="index.html" class="voltar">
+    Voltar para o início
+</a>
+```
+
+</div>
+
+<script>
+
+const formulario = document.getElementById("formAgendamento");
+
+formulario.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const agendamento = {
+        nome: document.getElementById("nome").value,
+        telefone: document.getElementById("telefone").value,
+        servico: document.getElementById("servico").value,
+        barbeiro: document.getElementById("barbeiro").value,
+        data: document.getElementById("data").value,
+        horario: document.getElementById("horario").value,
+        status: "Pendente"
+    };
+
+    const lista =
+        JSON.parse(localStorage.getItem("agendamentos")) || [];
+
+    lista.push(agendamento);
+
+    localStorage.setItem(
+        "agendamentos",
+        JSON.stringify(lista)
+    );
+
+    alert("Agendamento realizado com sucesso!");
+
+    formulario.reset();
+
+});
+
+</script>
+
+</body>
+</html>

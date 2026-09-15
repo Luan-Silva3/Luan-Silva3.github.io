@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Odontológica Sorriso Perfeito</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+}
+
+/* HEADER */
+header{
+    background:#0ea5a5;
+    padding:15px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#fff;
+}
+
+header h1{
+    font-size:22px;
+}
+
+nav a{
+    color:#fff;
+    margin-left:20px;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* HERO */
+.hero{
+    height:90vh;
+    background:linear-gradient(to right, rgba(14,165,165,0.8), rgba(59,130,246,0.8)),
+    url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    padding:20px;
+}
+
+.hero h2{
+    font-size:40px;
+}
+
+.hero p{
+    margin:20px 0;
+    font-size:18px;
+}
+
+.btn{
+    background:#fff;
+    color:#0ea5a5;
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* SEÇÕES */
+section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.services{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card{
+    background:#fff;
+    padding:25px;
+    width:280px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+/* SOBRE */
+.about{
+    max-width:800px;
+    margin:auto;
+}
+
+/* CONTATO */
+.contact{
+    background:#0ea5a5;
+    color:#fff;
+}
+
+.contact a{
+    color:#fff;
+    display:inline-block;
+    margin-top:15px;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Sorriso Perfeito</h1>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h2>Seu sorriso em boas mãos</h2>
+        <p>Tratamentos odontológicos modernos com qualidade e segurança</p>
+        <a class="btn" href="https://wa.me/5512982085137" target="_blank">Agendar no WhatsApp</a>
+    </div>
+</section>
+
+<section id="servicos">
+    <h2>Nossos Serviços</h2>
+    <div class="services">
+        <div class="card">
+            <h3>Limpeza Dental</h3>
+            <p>Remoção de tártaro e prevenção de doenças.</p>
+        </div>
+        <div class="card">
+            <h3>Clareamento</h3>
+            <p>Dentes mais brancos e sorriso mais bonito.</p>
+        </div>
+        <div class="card">
+            <h3>Ortodontia</h3>
+            <p>Aparelhos para alinhar seu sorriso.</p>
+        </div>
+    </div>
+</section>
+
+<section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p class="about">
+        Somos uma clínica especializada em tratamentos odontológicos, com foco em qualidade,
+        conforto e atendimento humanizado.
+    </p>
+</section>
+
+<section id="contato" class="contact">
+    <h2>Entre em Contato</h2>
+    <p>Agende sua consulta agora mesmo</p>
+    <a href="https://wa.me/5512982085137" target="_blank">Falar no WhatsApp</a>
+</section>
+
+<footer>
+    <p>© 2026 Clínica Sorriso Perfeito - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Growth Marketing Agency</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+backdrop-filter:blur(10px);
+background:rgba(15,23,42,.8);
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:1.5rem;
+font-weight:700;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:0 8%;
+background:
+radial-gradient(circle at top left,#7c3aed 0%,transparent 35%),
+radial-gradient(circle at bottom right,#06b6d4 0%,transparent 35%);
+}
+
+.hero-content{
+max-width:700px;
+text-align:center;
+animation:fadeUp 1s ease;
+}
+
+.hero h1{
+font-size:4rem;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero span{
+background:linear-gradient(90deg,#7c3aed,#06b6d4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+font-size:1.2rem;
+opacity:.85;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:18px 40px;
+background:linear-gradient(90deg,#7c3aed,#06b6d4);
+border-radius:50px;
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+section{
+padding:100px 8%;
+}
+
+.title{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:60px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.1);
+padding:30px;
+border-radius:20px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+text-align:center;
+}
+
+.stat{
+background:rgba(255,255,255,.05);
+padding:40px;
+border-radius:20px;
+}
+
+.number{
+font-size:3rem;
+font-weight:700;
+color:#06b6d4;
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.testimonial{
+background:rgba(255,255,255,.05);
+padding:30px;
+border-radius:20px;
+}
+
+.form{
+max-width:600px;
+margin:auto;
+background:rgba(255,255,255,.05);
+padding:40px;
+border-radius:20px;
+}
+
+.form input{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border:none;
+border-radius:10px;
+}
+
+.form button{
+width:100%;
+padding:15px;
+background:linear-gradient(90deg,#7c3aed,#06b6d4);
+border:none;
+color:white;
+border-radius:10px;
+cursor:pointer;
+font-size:1rem;
+}
+
+footer{
+padding:30px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.1);
+}
+
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:.8s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">GrowthAgency</div>
+
+<nav>
+<a href="#servicos">Serviços</a>
+<a href="#resultados">Resultados</a>
+<a href="#clientes">Clientes</a>
+<a href="#contato">Contato</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Transformamos Cliques em
+<span>Clientes</span>
+</h1>
+
+<p>
+Agência especializada em tráfego pago, funis de vendas e crescimento digital para empresas que querem escalar.
+</p>
+
+<a href="#contato" class="btn">
+Solicitar Diagnóstico Gratuito
+</a>
+
+</div>
+
+</section>
+
+<section id="servicos" class="hidden">
+
+<h2 class="title">Nossos Serviços</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🚀 Tráfego Pago</h3>
+<p>Google Ads, Meta Ads e campanhas de alta conversão.</p>
+</div>
+
+<div class="card">
+<h3>📈 Funis de Venda</h3>
+<p>Estratégias para transformar visitantes em compradores.</p>
+</div>
+
+<div class="card">
+<h3>🎯 Landing Pages</h3>
+<p>Páginas otimizadas para gerar mais leads e vendas.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="resultados" class="hidden">
+
+<h2 class="title">Resultados</h2>
+
+<div class="stats">
+
+<div class="stat">
+<div class="number" data-target="350">0</div>
+Clientes
+</div>
+
+<div class="stat">
+<div class="number" data-target="12">0</div>
+Milhões em vendas
+</div>
+
+<div class="stat">
+<div class="number" data-target="98">0</div>
+% satisfação
+</div>
+
+</div>
+
+</section>
+
+<section id="clientes" class="hidden">
+
+<h2 class="title">Depoimentos</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+⭐⭐⭐⭐⭐
+<p>Triplicamos nossas vendas em apenas 3 meses.</p>
+</div>
+
+<div class="testimonial">
+⭐⭐⭐⭐⭐
+<p>Excelente suporte e resultados acima do esperado.</p>
+</div>
+
+<div class="testimonial">
+⭐⭐⭐⭐⭐
+<p>Hoje recebemos leads diariamente graças ao trabalho deles.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contato" class="hidden">
+
+<h2 class="title">Solicite uma Proposta</h2>
+
+<div class="form">
+
+<form id="leadForm">
+
+<input type="text" placeholder="Seu nome" required>
+
+<input type="email" placeholder="Seu email" required>
+
+<input type="tel" placeholder="WhatsApp" required>
+
+<button type="submit">
+Quero Crescer Meu Negócio
+</button>
+
+</form>
+
+<p id="msg"></p>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 GrowthAgency • Todos os direitos reservados
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+document.querySelectorAll('.hidden').forEach(el=>{
+observer.observe(el);
+});
+
+const counters = document.querySelectorAll('.number');
+
+counters.forEach(counter=>{
+
+const update = ()=>{
+
+const target = +counter.dataset.target;
+const current = +counter.innerText;
+
+const increment = target / 100;
+
+if(current < target){
+counter.innerText =
+Math.ceil(current + increment);
+
+setTimeout(update,20);
+}
+else{
+counter.innerText = target;
+}
+
+};
+
+update();
+
+});
+
+document
+.getElementById("leadForm")
+.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+document.getElementById("msg")
+.innerHTML =
+"✅ Solicitação enviada com sucesso!";
+
+});
+
+</script>
+
+</body>
+</html>
+```
