@@ -1,166 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portifolio</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfólio de Luan Silva, desenvolvedor Front-end Júnior.">
+<title>Luan Silva | Desenvolvedor Front-end</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-    <div class="particulas"></div>
-
-    <nav class="navegacao">
-
-        <ul class="menu">
-
-            <li>
-                <a href="#inicio" class="menu-link">Inicio</a>
-
-            </li>
-            <li>
-                <a href="#sobre" class="menu-link">Sobre</a>
-
-            </li>
-            <li>
-                <a href="#projetos" class="menu-link">Projetos</a>
-
-            </li>
-            <li>
-                <a href="#contato" class="menu-link">Contato</a>
-
-            </li>
-
-        </ul>
-    </nav>
-
-    <main id="inicio" class="cabecalho">
-
-        <img src="./img/perfil.png" alt="foto de Luan" class="foto-perfil">
-        <h1>Luan Silva</h1>
-        <p class="cabecalho-subtitulo">Desenvolvedor Front End</p>
-
-
-
-    </main>
-
-    <section id="sobre" class="sobre">
-
-        <h2 class="sobre-titulo">Sobre mim</h2>
-
-        <div class="sobre-caixa">
-
-            <p class="sobre-paragrafo">Sou desenvolvedor front-end especialista em criação de sites, trabalho
-                principalmente com: html,css, e JavaScript, irei criar o seu site com todo meu empenho e dedicação!
-            </p>
-
-        </div>
-
-    </section>
-
-    <section id="projetos" class="projetos">
-        <h2 class="projetos-titulo">Meus projetos</h2>
-
-      
-
-
-
-</body>
-
-<div class="projetos-caixa">
-    <div class="projetos-card">
-        <a href="./projeto1.html"> <img src="./img/landing-page.png" alt="Projeto1" class="projeto-imagem"></a>
-        <div class="caixa-texto-projeto">
-            <h3 class="info-projeto">Landing page</h3>
-            <p class="paragrafo-projeto">Site para conversão de leads</p>
-        </div>
-    </div>
-
-    <div class="projetos-card">
-        <a href="./projeto2.html"> <img src="./img/site-dentista.png" alt="Projeto2" class="projeto-imagem">
-            <!DOCTYPE html>
-        </a>
-        <div class="caixa-texto-projeto">
-            <h3 class="info-projeto">Site para Dentista</h3>
-            <p class="paragrafo-projeto">Site para uma clinica odontológica</p>
-        </div>
-    </div>
-
-    <div class="projetos-card">
-        <a href="./projeto3.html"><img src="./img/site-Ebook.png" alt="Projeto3" class="projeto-imagem">
-        </a>
-        <div class="caixa-texto-projeto">
-            <h3 class="info-projeto">Landing page Ebook</h3>
-            <p class="paragrafo-projeto">Site para venda de Ebook</p>
-        </div>
-    </div>
-
-     <div class="projetos-card">
-        <a href="./projeto4.html"><img src="./img/loja-roupas.png" alt="Projeto4" class="projeto-imagem">
-        </a>
-        <div class="caixa-texto-projeto">
-            <h3 class="info-projeto">Loja de roupas feminina</h3>
-            <p class="paragrafo-projeto">landing page para loja de roupas feminina</p>
-        </div>
-    </div>
-
-        <div class="projetos-card">
-        <a href="./projeto5.html"><img src="./img/site-barbearia.png" alt="Projeto5" class="projeto-imagem">
-        </a>
-        <div class="caixa-texto-projeto">
-            <h3 class="info-projeto">Barbearia com agendamento</h3>
-            <p class="paragrafo-projeto">Barbearia premium com sistema de agendamento</p>
-        </div>
-    </div>
-      <div class="projetos-card">
-        <a href="./kart-br.html"><img src="./img/pistaKart.jpg" alt="Projeto6" class="projeto-imagem">
-        </a>
-        <div class="caixa-texto-projeto">
-            <h3 class="info-projeto">Site da BR Kart</h3>
-            <p class="paragrafo-projeto">Site para, pista de Kart com agendamento</p>
-        </div>
-    </div>
-
-</div>
-
-</section>
-
-<section id="contato" class="contato">
-    <h2 class="contato-titulo">Entre em contato</h2>
-    <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
-        <div class="grupo-form">
-            <input placeholder="Nome" class="campo-form" id="nome">
-        </div>
-
-        <div class="grupo-form">
-            <textarea placeholder="Digite sua Mensagem" class="campo-form" rows=4 id="mensagem"></textarea>
-        </div>
-        <button type="submit" class="botao-form">Enviar whatsapp</button>
-
-    </form>
-
-</section>
-
-<script>
-
-    function enviarWhats(event) {
-        event.preventDefault()
-
-        const nome = document.getElementById('nome').value;
-        const mensagem = document.getElementById('mensagem').value;
-        const telefone = '5512982085137'
-
-        const texto = `Olá! Me chamo ${nome}, ${mensagem}`
-        const msgFormatada = encodeURIComponent(texto)
-
-        const url = `https://whatsa.me/${telefone}/?t=${msgFormatada}`
-
-        window.open(url, '_blank')
-    }      
-</script>
-
-</body>
-
-</html>
+<header class="header"><a class="logo" href="#inicio">LUAN<span>.</span></a><nav class="nav" id="nav"><a href="#sobre">Sobre</a><a href="#tecnologias">Tecnologias</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a></nav><button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">☰</button></header>
+<main>
+<section class="hero" id="inicio"><div class="hero-copy"><p class="eyebrow">DESENVOLVEDOR FRONT-END JÚNIOR</p><h1>Transformando ideias em <span>aplicações web.</span></h1><p class="hero-text">Sou Luan Silva, desenvolvedor em formação com foco em JavaScript, interfaces modernas, sistemas web e soluções que realmente funcionam.</p><div class="actions"><a class="btn primary" href="#projetos">Ver projetos ↗</a><a class="btn" href="https://github.com/Luan-Silva3" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div><p class="availability"><i></i> Aberto a oportunidades como Desenvolvedor Júnior</p></div><div class="profile-card"><img src="images/luan.jpg" alt="Foto de Luan Silva"><div class="profile-caption"><strong>Luan Silva</strong><span>Desenvolvedor Front-end Júnior</span></div></div></section>
+<section class="section" id="sobre"><div class="section-heading"><p class="eyebrow">01 — SOBRE MIM</p><h2>Construindo minha carreira <span>linha por linha.</span></h2></div><div class="about-grid"><div class="about-text"><p>Estou construindo minha trajetória no desenvolvimento web com foco em transformar ideias em projetos reais. Meu objetivo é evoluir cada vez mais em JavaScript e conquistar minha primeira oportunidade profissional como Desenvolvedor Júnior.</p><p>Gosto de entender o que existe por trás da interface: lógica, dados, APIs, banco de dados e a experiência de quem usa o sistema.</p></div><div class="stats"><div><strong>JS</strong><small>Foco principal</small></div><div><strong>Web</strong><small>Aplicações reais</small></div><div><strong>∞</strong><small>Em evolução</small></div></div></div></section>
+<section class="section" id="tecnologias"><div class="section-heading"><p class="eyebrow">02 — TECNOLOGIAS</p><h2>Ferramentas que estou <span>aprendendo e praticando.</span></h2></div><div class="tech-grid"><article class="tech-card"><div class="tech-icon">&lt;/&gt;</div><h3>HTML5</h3><p>Estrutura semântica e organização de páginas web.</p></article><article class="tech-card"><div class="tech-icon">#</div><h3>CSS3</h3><p>Layouts responsivos e interfaces modernas.</p></article><article class="tech-card"><div class="tech-icon">JS</div><h3>JavaScript</h3><p>Lógica, DOM, eventos, funções, arrays e dados.</p></article><article class="tech-card"><div class="tech-icon">DB</div><h3>Supabase</h3><p>Autenticação, banco de dados, CRUD e integração.</p></article><article class="tech-card"><div class="tech-icon">G</div><h3>Git & GitHub</h3><p>Versionamento e publicação de projetos.</p></article><article class="tech-card"><div class="tech-icon">API</div><h3>APIs</h3><p>Integração entre aplicações e consumo de dados.</p></article></div></section>
+<section class="section" id="projetos"><div class="section-heading"><p class="eyebrow">03 — PROJETOS</p><h2>Projetos que colocam meu conhecimento <span>em prática.</span></h2></div><div class="projects">
+<article class="project featured"><div class="project-preview drinks"><span>MANTIQUEIRA</span><small>DRINKS</small></div><div class="project-info"><p class="project-number">01 / PUBLICADO</p><h3>Mantiqueira Drinks</h3><p>Site com área administrativa, login, cadastro e gerenciamento de produtos utilizando Supabase.</p><div class="tags"><span>JavaScript</span><span>Supabase</span><span>CRUD</span><span>HTML/CSS</span></div><div class="project-links"><a href="https://luan-silva3.github.io/mantiqueira/" target="_blank" rel="noopener noreferrer">Ver projeto ↗</a><a href="https://github.com/Luan-Silva3" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></article>
+<article class="project"><div class="project-preview kart"><span>BR KART</span><small>TAUBATÉ</small></div><div class="project-info"><p class="project-number">02 / PUBLICADO</p><h3>BR Kart Taubaté</h3><p>Site institucional com foco na apresentação da empresa, seus serviços e uma experiência responsiva.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><div class="project-links"><a href="https://luan-silva3.github.io/kart-br.html" target="_blank" rel="noopener noreferrer">Ver projeto ↗</a><a href="https://github.com/Luan-Silva3" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></article>
+<article class="project"><div class="project-preview nexa"><span>NEXA</span><small>PROJETO DE PORTFÓLIO</small></div><div class="project-info"><p class="project-number">03 / EM DESENVOLVIMENTO</p><h3>NEXA</h3><p>Sistema de gestão empresarial pessoal para praticar JavaScript, autenticação, CRUD, dashboards e integração com banco de dados.</p><div class="tags"><span>JavaScript</span><span>Supabase</span><span>SQL</span><span>HTML/CSS</span></div><span class="status-pill">Em desenvolvimento</span></div></article>
+</div></section>
+<section class="section contact-section" id="contato"><div class="contact-box"><p class="eyebrow">04 — CONTATO</p><h2>Vamos construir algo <span>juntos?</span></h2><p>Estou aberto a oportunidades como Desenvolvedor Júnior e também a projetos freelance.</p><div class="actions"><a class="btn primary" href="https://github.com/Luan-Silva3" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/luan-silva-0771653ba/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div></section>
+</main><footer><span>LUAN<span class="footer-dot">.</span></span><span>© 2026 Luan Silva</span></footer><script src="js/script.js"></script>
+</body></html>
