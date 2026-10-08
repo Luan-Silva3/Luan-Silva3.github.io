@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXA | Relatórios</title>
+
+    <link rel="stylesheet" href="css/relatorios.css">
+</head>
+
+<body>
+
+    <main class="relatorios-container">
+
+        <!-- =========================
+             CABEÇALHO
+        ========================== -->
+
+        <header class="relatorios-header">
+
+            <div>
+                <span class="eyebrow">NEXA • ANÁLISE</span>
+
+                <h1>Relatórios</h1>
+
+                <p>
+                    Analise os resultados e acompanhe o desempenho da sua empresa.
+                </p>
+            </div>
+
+            <div class="header-actions">
+
+                <button
+                    class="btn-secondary"
+                    id="btnVoltar">
+                    ← Dashboard
+                </button>
+
+                <button
+                    class="btn-primary"
+                    id="btnAtualizar">
+                    ↻ Atualizar
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             FILTROS
+        ========================== -->
+
+        <section class="filters-card">
+
+            <div class="filter-group">
+
+                <label for="filtroPeriodo">
+                    Período
+                </label>
+
+                <select id="filtroPeriodo">
+
+                    <option value="mes">
+                        Este mês
+                    </option>
+
+                    <option value="3meses">
+                        Últimos 3 meses
+                    </option>
+
+                    <option value="ano">
+                        Este ano
+                    </option>
+
+                    <option value="todos">
+                        Todo o período
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="period-info" id="periodInfo">
+                Carregando período...
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CARDS FINANCEIROS
+        ========================== -->
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+
+                <div class="stat-icon receita">
+                    R$
+                </div>
+
+                <div>
+
+                    <span>
+                        Receitas
+                    </span>
+
+                    <strong id="relatorioReceitas">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon despesa">
+                    −
+                </div>
+
+                <div>
+
+                    <span>
+                        Despesas
+                    </span>
+
+                    <strong id="relatorioDespesas">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon saldo">
+                    =
+                </div>
+
+                <div>
+
+                    <span>
+                        Saldo
+                    </span>
+
+                    <strong id="relatorioSaldo">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon clientes">
+                    ♙
+                </div>
+
+                <div>
+
+                    <span>
+                        Clientes
+                    </span>
+
+                    <strong id="relatorioClientes">
+                        0
+                    </strong>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             CONTEÚDO PRINCIPAL
+        ========================== -->
+
+        <section class="reports-grid">
+
+
+            <!-- FINANCEIRO -->
+
+            <article class="report-card financial-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <span class="card-label">
+                            FINANCEIRO
+                        </span>
+
+                        <h2>
+                            Receitas x Despesas
+                        </h2>
+                    </div>
+
+                    <span class="card-icon">
+                        R$
+                    </span>
+
+                </div>
+
+
+                <div class="financial-chart">
+
+                    <div class="chart-row">
+
+                        <div class="chart-label">
+                            <span>Receitas</span>
+
+                            <strong id="graficoReceitasValor">
+                                R$ 0,00
+                            </strong>
+                        </div>
+
+                        <div class="bar-container">
+
+                            <div
+                                class="bar receita-bar"
+                                id="barraReceitas">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart-row">
+
+                        <div class="chart-label">
+                            <span>Despesas</span>
+
+                            <strong id="graficoDespesasValor">
+                                R$ 0,00
+                            </strong>
+                        </div>
+
+                        <div class="bar-container">
+
+                            <div
+                                class="bar despesa-bar"
+                                id="barraDespesas">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="financial-result">
+
+                    <span>
+                        Resultado do período
+                    </span>
+
+                    <strong id="resultadoPeriodo">
+                        R$ 0,00
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVIÇOS -->
+
+            <article class="report-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <span class="card-label">
+                            SERVIÇOS
+                        </span>
+
+                        <h2>
+                            Desempenho
+                        </h2>
+                    </div>
+
+                    <span class="card-icon">
+                        ◇
+                    </span>
+
+                </div>
+
+
+                <div class="mini-stats">
+
+                    <div>
+                        <span>Total</span>
+
+                        <strong id="totalServicosRelatorio">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Concluídos</span>
+
+                        <strong id="servicosConcluidos">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Em andamento</span>
+
+                        <strong id="servicosAndamento">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CLIENTES -->
+
+            <article class="report-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <span class="card-label">
+                            CLIENTES
+                        </span>
+
+                        <h2>
+                            Base de clientes
+                        </h2>
+                    </div>
+
+                    <span class="card-icon">
+                        ♙
+                    </span>
+
+                </div>
+
+
+                <div class="big-number">
+
+                    <strong id="clientesTotal">
+                        0
+                    </strong>
+
+                    <span>
+                        clientes cadastrados
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- ESTOQUE -->
+
+            <article class="report-card stock-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <span class="card-label">
+                            ESTOQUE
+                        </span>
+
+                        <h2>
+                            Produtos
+                        </h2>
+                    </div>
+
+                    <span class="card-icon">
+                        ▤
+                    </span>
+
+                </div>
+
+
+                <div class="stock-info">
+
+                    <div>
+                        <span>
+                            Produtos cadastrados
+                        </span>
+
+                        <strong id="totalProdutos">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>
+                            Estoque baixo
+                        </span>
+
+                        <strong id="estoqueBaixo">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>
+                            Valor do estoque
+                        </span>
+
+                        <strong id="valorEstoque">
+                            R$ 0,00
+                        </strong>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- =========================
+             STATUS
+        ========================== -->
+
+        <div
+            class="loading"
+            id="loading">
+            Carregando relatórios...
+        </div>
+
+        <div
+            class="error-message"
+            id="errorMessage">
+        </div>
+
+    </main>
+
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase.js"></script>
+
+    <script src="js/relatorios.js"></script>
+
+</body>
+
+</html>

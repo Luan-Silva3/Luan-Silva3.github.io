@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXA | Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/tema.css">
+</head>
+
+<body>
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <h1>NEXA<span>.</span></h1>
+            <small>GESTÃO INTELIGENTE</small>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="avatar">N</div>
+            <div>
+                <span>Olá,</span>
+                <strong id="nomeUsuario">Carregando...</strong>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <span>⌕</span>
+            <input type="search" placeholder="Buscar..." id="campoBusca">
+        </div>
+
+        <nav class="menu">
+            <p class="menu-label">MENU PRINCIPAL</p>
+
+            <a href="#" class="menu-item active" data-page="dashboard">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="#" class="menu-item" data-page="clientes">
+                <span>♙</span> Clientes
+            </a>
+
+            <a href="#" class="menu-item" data-page="servicos">
+                <span>◇</span> Serviços
+            </a>
+
+            <a href="#" class="menu-item" data-page="agendamentos">
+                <span>▣</span> Agendamentos
+            </a>
+
+            <a href="#" class="menu-item" data-page="produtos">
+                <span>▤</span> Produtos e estoque
+            </a>
+
+            <a href="#" class="menu-item" data-page="financeiro">
+                <span>R$</span> Financeiro
+            </a>
+
+            <a href="#" class="menu-item" data-page="relatorios">
+                <span>▥</span> Relatórios
+            </a>
+
+            <p class="menu-label menu-label-bottom">PREFERÊNCIAS</p>
+
+            <a href="#" class="menu-item" data-page="configuracoes">
+                <span>⚙</span> Configurações
+            </a>
+
+            <a href="#" class="menu-item" data-page="ajuda">
+                <span>ⓘ</span> Central de ajuda
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="plan-card">
+                <span class="plan-dot"></span>
+                <div>
+                    <strong>NEXA Workspace</strong>
+                    <small>Seu espaço de gestão</small>
+                </div>
+            </div>
+
+            <button class="logout-button" id="btnLogout">
+                <span>↪</span> Sair da conta
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-mobile" id="btnMenu">☰</button>
+                <div>
+                    <div class="breadcrumb">
+                        <span>NEXA</span> / <strong id="pageTitle">Dashboard</strong>
+                    </div>
+                    <p id="pageSubtitle">Visão geral da sua empresa</p>
+                </div>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="icon-button notification-button" id="btnNotificacoes" title="Notificações">
+                    ♧
+                    <span class="notification-badge" id="notificationBadge">0</span>
+                </button>
+                <button class="icon-button" id="btnTema" title="Alternar tema">☾</button>
+                <div class="topbar-date" id="dataAtual"></div>
+                <div class="avatar avatar-top" id="avatarUsuario">N</div>
+            </div>
+        </header>
+<div class="notifications-dropdown" id="painelNotificacoes">
+
+    <div class="notifications-dropdown-header">
+        <div>
+            <h3>Notificações</h3>
+            <p id="notificationSubtitle">Nenhuma nova notificação</p>
+        </div>
+
+        <button id="marcarTodasLidas" class="text-button">
+            Marcar todas como lidas
+        </button>
+    </div>
+
+    <div class="notifications-dropdown-list" id="listaNotificacoes">
+        <div class="notification-empty">
+            <span>✓</span>
+            <strong>Tudo certo por aqui</strong>
+            <p>Você não possui novas notificações.</p>
+        </div>
+    </div>
+
+</div>
+        <section class="dashboard-content">
+            <div class="welcome-row">
+                <div>
+                    <p class="eyebrow">SEU NEGÓCIO EM UM SÓ LUGAR</p>
+                    <h1>Olá, <span id="nomeBoasVindas">usuário</span></h1>
+                    <p class="welcome-description">
+                        Acompanhe o desempenho e organize sua empresa.
+                    </p>
+                </div>
+
+                <button class="primary-button" data-page="agendamentos">
+                    <span>＋</span> Novo agendamento
+                </button>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Receita do mês</span>
+                        <span class="stat-icon">R$</span>
+                    </div>
+                    <h2 id="receitaTotal">R$ 0,00</h2>
+                    <p><span class="green-text">●</span> Receita registrada</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Despesas do mês</span>
+                        <span class="stat-icon">↘</span>
+                    </div>
+                    <h2 id="despesasTotal">R$ 0,00</h2>
+                    <p>Despesas registradas</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Serviços concluídos</span>
+                        <span class="stat-icon">✓</span>
+                    </div>
+                    <h2 id="totalServicos">0</h2>
+                    <p>Serviços cadastrados</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Clientes</span>
+                        <span class="stat-icon">♙</span>
+                    </div>
+                    <h2 id="totalClientes">0</h2>
+                    <p>Clientes cadastrados</p>
+                </article>
+            </div>
+
+            <div class="dashboard-grid">
+                <article class="panel sales-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Resumo financeiro</h3>
+                            <p>Visão geral das movimentações</p>
+                        </div>
+                        <button class="more-button" aria-label="Mais opções">⋮</button>
+                    </div>
+
+                    <div class="chart-summary">
+                        <div>
+                            <span>Saldo registrado</span>
+                            <strong id="saldoTotal">R$ 0,00</strong>
+                        </div>
+                        <span class="chart-period">Este mês</span>
+                    </div>
+
+                    <div class="chart-placeholder">
+                        <div class="chart-grid-lines">
+                            <span>R$ 4 mil</span>
+                            <span>R$ 3 mil</span>
+                            <span>R$ 2 mil</span>
+                            <span>R$ 1 mil</span>
+                            <span>R$ 0</span>
+                        </div>
+
+                        <svg viewBox="0 0 600 190" preserveAspectRatio="none" class="chart-svg"
+                            aria-label="Gráfico financeiro do NEXA">
+                            <defs>
+                                <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#45f58b" stop-opacity=".3" />
+                                    <stop offset="100%" stop-color="#45f58b" stop-opacity="0" />
+                                </linearGradient>
+                            </defs>
+                            <path class="chart-area"
+                                d="M0 155 C70 140 90 115 150 125 S250 75 310 95 S400 60 460 72 S540 20 600 35 L600 190 L0 190 Z" />
+                            <path class="chart-line"
+                                d="M0 155 C70 140 90 115 150 125 S250 75 310 95 S400 60 460 72 S540 20 600 35" />
+                        </svg>
+                    </div>
+
+                    <div class="chart-months" id="graficoMeses">
+                        <span>Jan</span><span>Fev</span><span>Mar</span>
+                        <span>Abr</span><span>Mai</span><span>Jun</span>
+                        <span>Jul</span><span>Ago</span><span>Set</span>
+                        <span>Out</span><span>Nov</span><span>Dez</span>
+                    </div>
+
+                    <p class="chart-note">
+                        Gráfico ilustrativo — será conectado aos dados financeiros.
+                    </p>
+                </article>
+
+                <article class="panel notifications-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Notificações</h3>
+                            <p>Acompanhe o que acontece</p>
+                        </div>
+                        <span class="notification-count">3</span>
+                    </div>
+
+                    <div class="notification-list">
+                        <div class="notification-item">
+                            <span class="notification-dot"></span>
+                            <div>
+                                <strong>Bem-vindo ao NEXA</strong>
+                                <p>Seu espaço de gestão está pronto.</p>
+                            </div>
+                        </div>
+
+                        <div class="notification-item">
+                            <span class="notification-dot"></span>
+                            <div>
+                                <strong>Organize seus clientes</strong>
+                                <p>Cadastre seus primeiros clientes.</p>
+                            </div>
+                        </div>
+
+                        <div class="notification-item">
+                            <span class="notification-dot muted"></span>
+                            <div>
+                                <strong>Controle financeiro</strong>
+                                <p>Registre entradas e despesas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="panel clients-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Clientes recentes</h3>
+                            <p>Seus clientes cadastrados</p>
+                        </div>
+                        <button class="text-button" data-page="clientes">Ver todos →</button>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Contato</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listaClientes">
+                                <tr>
+                                    <td colspan="3" class="empty-table">
+                                        Seus clientes aparecerão aqui.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="panel activity-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Ações rápidas</h3>
+                            <p>Atalhos para sua rotina</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <button class="quick-action" data-page="clientes">
+                            <span class="quick-icon">＋</span>
+                            <span><strong>Novo cliente</strong><small>Cadastrar contato</small></span>
+                            <span class="quick-arrow">→</span>
+                        </button>
+
+                        <button class="quick-action" data-page="servicos">
+                            <span class="quick-icon">◇</span>
+                            <span><strong>Novo serviço</strong><small>Adicionar serviço</small></span>
+                            <span class="quick-arrow">→</span>
+                        </button>
+
+                        <button class="quick-action" data-page="financeiro">
+                            <span class="quick-icon">R$</span>
+                            <span><strong>Lançamento financeiro</strong><small>Registrar movimentação</small></span>
+                            <span class="quick-arrow">→</span>
+                        </button>
+
+                        <button class="quick-action" data-page="produtos">
+                            <span class="quick-icon">▤</span>
+                            <span><strong>Adicionar produto</strong><small>Atualizar estoque</small></span>
+                            <span class="quick-arrow">→</span>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/tema.js"></script>
+</body>
+
+</html>

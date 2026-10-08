@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXA | Agendamentos</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="css/auth.css">
+
+    <!-- CSS desta página -->
+    <link rel="stylesheet" href="css/agendamentos.css">
+
+
+    <link rel="stylesheet" href="css/tema.css">
+</head>
+
+<body>
+
+    <main class="agendamentos-container">
+
+        <!-- =========================
+             CABEÇALHO
+        ========================== -->
+
+        <header class="agendamentos-header">
+
+            <div class="header-top">
+
+                <a href="dashboard.html" class="voltar">
+                    ← Dashboard
+                </a>
+
+                <div class="logo">
+                    NEXA<span>.</span>
+                </div>
+
+            </div>
+
+            <div class="titulo-area">
+
+                <span class="tag">
+                    GESTÃO DE AGENDAMENTOS
+                </span>
+
+                <h1>
+                    Seus agendamentos
+                </h1>
+
+                <p>
+                    Organize seus compromissos e mantenha sua agenda sob controle.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             RESUMO
+        ========================== -->
+
+        <section class="agendamentos-resumo">
+
+            <div class="resumo-card">
+
+                <span class="resumo-label">
+                    Total
+                </span>
+
+                <strong id="totalAgendamentos">
+                    0
+                </strong>
+
+                <small>
+                    agendamentos
+                </small>
+
+            </div>
+
+
+            <div class="resumo-card">
+
+                <span class="resumo-label">
+                    Hoje
+                </span>
+
+                <strong id="totalHoje">
+                    0
+                </strong>
+
+                <small>
+                    para hoje
+                </small>
+
+            </div>
+
+
+            <div class="resumo-card">
+
+                <span class="resumo-label">
+                    Agendados
+                </span>
+
+                <strong id="totalAgendados">
+                    0
+                </strong>
+
+                <small>
+                    pendentes
+                </small>
+
+            </div>
+
+
+            <div class="resumo-card">
+
+                <span class="resumo-label">
+                    Concluídos
+                </span>
+
+                <strong id="totalConcluidos">
+                    0
+                </strong>
+
+                <small>
+                    realizados
+                </small>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ÁREA PRINCIPAL
+        ========================== -->
+
+        <section class="agendamentos-card">
+
+            <div class="lista-header">
+
+                <div>
+                    <span class="lista-tag">
+                        AGENDA
+                    </span>
+
+                    <h2>
+                        Próximos compromissos
+                    </h2>
+                </div>
+
+                <button
+                    type="button"
+                    id="btnNovoAgendamento"
+                    class="btn-novo">
+                    + Novo agendamento
+                </button>
+
+            </div>
+
+
+            <!-- Busca -->
+
+            <div class="busca-container">
+
+                <div class="busca-icon">
+                    ⌕
+                </div>
+
+                <input
+                    type="text"
+                    id="buscaAgendamento"
+                    placeholder="Buscar por cliente ou serviço..."
+                    autocomplete="off">
+
+            </div>
+
+
+            <!-- Lista -->
+
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Data
+                            </th>
+
+                            <th>
+                                Horário
+                            </th>
+
+                            <th>
+                                Cliente
+                            </th>
+
+                            <th>
+                                Serviço
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Ações
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="listaAgendamentos">
+
+                        <!--
+                            Os agendamentos serão
+                            carregados pelo JavaScript.
+                        -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FORMULÁRIO
+        ========================== -->
+
+        <section
+            class="formulario-card"
+            id="formularioCard">
+
+            <div class="formulario-header">
+
+                <div>
+
+                    <span class="lista-tag">
+                        NOVO AGENDAMENTO
+                    </span>
+
+                    <h2 id="tituloFormulario">
+                        Criar agendamento
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="btnFecharFormulario"
+                    class="btn-fechar">
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="formAgendamento">
+
+                <!-- ID oculto -->
+
+                <input
+                    type="hidden"
+                    id="agendamentoId">
+
+
+                <!-- Cliente -->
+
+                <div class="form-group">
+
+                    <label for="clienteId">
+                        Cliente
+                    </label>
+
+                    <select id="clienteId" required>
+
+                        <option value="">
+                            Selecione um cliente
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Serviço -->
+
+                <div class="form-group">
+
+                    <label for="servicoId">
+                        Serviço
+                    </label>
+
+                    <select id="servicoId" required>
+
+                        <option value="">
+                            Selecione um serviço
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Data + horário -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="dataAgendamento">
+                            Data
+                        </label>
+
+                        <input
+                            type="date"
+                            id="dataAgendamento"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="horaAgendamento">
+                            Horário
+                        </label>
+
+                        <input
+                            type="time"
+                            id="horaAgendamento"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Status -->
+
+                <div class="form-group">
+
+                    <label for="statusAgendamento">
+                        Status
+                    </label>
+
+                    <select id="statusAgendamento">
+
+                        <option value="Agendado">
+                            Agendado
+                        </option>
+
+                        <option value="Concluído">
+                            Concluído
+                        </option>
+
+                        <option value="Cancelado">
+                            Cancelado
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Observações -->
+
+                <div class="form-group">
+
+                    <label for="observacoes">
+                        Observações
+                    </label>
+
+                    <textarea
+                        id="observacoes"
+                        rows="4"
+                        placeholder="Adicione alguma observação sobre o agendamento..."></textarea>
+
+                </div>
+
+
+                <!-- Mensagem -->
+
+                <div
+                    id="mensagem"
+                    class="mensagem">
+                </div>
+
+
+                <!-- Botões -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        id="btnCancelar"
+                        class="btn-cancelar">
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="btnSalvar"
+                        class="btn-salvar">
+                        Salvar agendamento
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             RODAPÉ
+        ========================== -->
+
+        <footer class="agendamentos-footer">
+
+            <span>
+                NEXA.
+            </span>
+
+            <p>
+                Gestão inteligente para sua empresa.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Configuração do Supabase -->
+    <script src="js/supabase.js"></script>
+
+    <!-- JavaScript dos agendamentos -->
+    <script src="js/agendamentos.js"></script>
+
+    <script src="js/tema.js"></script>
+</body>
+
+</html>

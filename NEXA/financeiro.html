@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXA | Financeiro</title>
+
+    <link rel="stylesheet" href="css/financeiro.css">
+    <link rel="stylesheet" href="css/tema.css">
+</head>
+
+<body>
+
+    <main class="financeiro-container">
+
+        <!-- CABEÇALHO -->
+        <header class="financeiro-header">
+
+            <div class="header-top">
+
+                <a href="dashboard.html" class="voltar">
+                    ← Dashboard
+                </a>
+
+                <div class="logo">
+                    NEXA<span>.</span>
+                </div>
+
+            </div>
+
+            <div class="titulo-area">
+
+                <span class="tag">
+                    CONTROLE FINANCEIRO
+                </span>
+
+                <h1>
+                    Seu financeiro
+                </h1>
+
+                <p>
+                    Controle receitas, despesas e acompanhe o saldo da sua empresa.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- RESUMO FINANCEIRO -->
+        <section class="financeiro-resumo">
+
+            <div class="resumo-card">
+
+                <div class="resumo-icon">
+                    💰
+                </div>
+
+                <div>
+                    <span>
+                        Saldo
+                    </span>
+
+                    <strong id="saldo">
+                        R$ 0,00
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="resumo-card">
+
+                <div class="resumo-icon">
+                    📈
+                </div>
+
+                <div>
+                    <span>
+                        Receitas
+                    </span>
+
+                    <strong id="totalReceitas">
+                        R$ 0,00
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="resumo-card">
+
+                <div class="resumo-icon">
+                    📉
+                </div>
+
+                <div>
+                    <span>
+                        Despesas
+                    </span>
+
+                    <strong id="totalDespesas">
+                        R$ 0,00
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="resumo-card">
+
+                <div class="resumo-icon">
+                    ⏳
+                </div>
+
+                <div>
+                    <span>
+                        Pendentes
+                    </span>
+
+                    <strong id="totalPendentes">
+                        R$ 0,00
+                    </strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LISTA FINANCEIRA -->
+        <section class="financeiro-card">
+
+            <div class="lista-header">
+
+                <div>
+
+                    <span class="tag">
+                        MOVIMENTAÇÕES
+                    </span>
+
+                    <h2>
+                        Entradas e saídas
+                    </h2>
+
+                </div>
+
+
+                <button
+                    id="btnNovaMovimentacao"
+                    class="btn-novo"
+                >
+                    + Nova movimentação
+                </button>
+
+            </div>
+
+
+            <!-- BUSCA E FILTROS -->
+            <div class="filtros">
+
+                <div class="busca-container">
+
+                    <input
+                        type="text"
+                        id="buscaMovimentacao"
+                        placeholder="Pesquisar movimentação..."
+                    >
+
+                </div>
+
+
+                <select id="filtroTipo">
+
+                    <option value="todos">
+                        Todos os tipos
+                    </option>
+
+                    <option value="Receita">
+                        Receitas
+                    </option>
+
+                    <option value="Despesa">
+                        Despesas
+                    </option>
+
+                </select>
+
+
+                <select id="filtroStatus">
+
+                    <option value="todos">
+                        Todos os status
+                    </option>
+
+                    <option value="Pendente">
+                        Pendente
+                    </option>
+
+                    <option value="Pago">
+                        Pago
+                    </option>
+
+                    <option value="Cancelado">
+                        Cancelado
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- TABELA -->
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Descrição
+                            </th>
+
+                            <th>
+                                Tipo
+                            </th>
+
+                            <th>
+                                Categoria
+                            </th>
+
+                            <th>
+                                Vencimento
+                            </th>
+
+                            <th>
+                                Valor
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Ações
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="listaMovimentacoes">
+
+                        <tr>
+
+                            <td
+                                colspan="7"
+                                class="estado-vazio"
+                            >
+                                Nenhuma movimentação cadastrada.
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- FORMULÁRIO -->
+        <section
+            class="formulario-card"
+            id="formularioCard"
+        >
+
+            <div class="formulario-header">
+
+                <div>
+
+                    <span class="tag">
+                        FINANCEIRO
+                    </span>
+
+                    <h2 id="tituloFormulario">
+                        Nova movimentação
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="btnFecharFormulario"
+                    class="btn-fechar"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="formFinanceiro">
+
+                <input
+                    type="hidden"
+                    id="movimentacaoId"
+                >
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="tipo">
+                            Tipo
+                        </label>
+
+                        <select id="tipo" required>
+
+                            <option value="Receita">
+                                Receita
+                            </option>
+
+                            <option value="Despesa">
+                                Despesa
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="status">
+                            Status
+                        </label>
+
+                        <select id="status" required>
+
+                            <option value="Pendente">
+                                Pendente
+                            </option>
+
+                            <option value="Pago">
+                                Pago
+                            </option>
+
+                            <option value="Cancelado">
+                                Cancelado
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="descricao">
+                            Descrição
+                        </label>
+
+                        <input
+                            type="text"
+                            id="descricao"
+                            placeholder="Ex: Venda de produto"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="categoria">
+                            Categoria
+                        </label>
+
+                        <input
+                            type="text"
+                            id="categoria"
+                            placeholder="Ex: Vendas"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="valor">
+                            Valor
+                        </label>
+
+                        <input
+                            type="number"
+                            id="valor"
+                            placeholder="0,00"
+                            step="0.01"
+                            min="0"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="dataVencimento">
+                            Data de vencimento
+                        </label>
+
+                        <input
+                            type="date"
+                            id="dataVencimento"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="dataPagamento">
+                            Data de pagamento
+                        </label>
+
+                        <input
+                            type="date"
+                            id="dataPagamento"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="observacoes">
+                        Observações
+                    </label>
+
+                    <textarea
+                        id="observacoes"
+                        rows="4"
+                        placeholder="Observações sobre essa movimentação..."
+                    ></textarea>
+
+                </div>
+
+
+                <div
+                    id="mensagem"
+                    class="mensagem"
+                ></div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        id="btnCancelar"
+                        class="btn-cancelar"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn-salvar"
+                    >
+                        Salvar movimentação
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <footer class="financeiro-footer">
+            NEXA • Gestão inteligente para sua empresa
+        </footer>
+
+    </main>
+
+
+    <!-- SUPABASE -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+    <script src="js/supabase.js"></script>
+
+    <script src="js/financeiro.js"></script>
+
+    <script src="js/tema.js"></script>
+</body>
+
+</html>

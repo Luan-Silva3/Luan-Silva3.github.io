@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>NEXA | Entrar</title>
+
+<link
+    rel="stylesheet"
+    href="css/auth.css"
+>
+```
+
+</head>
+
+<body>
+
+```
+<main class="auth-container">
+
+    <section class="auth-card">
+
+        <div class="logo">
+
+            <h1>NEXA</h1>
+
+            <p>
+                Gestão inteligente para sua empresa
+            </p>
+
+        </div>
+
+        <div class="form-title">
+
+            <h2>Bem-vindo de volta</h2>
+
+            <p>
+                Entre na sua conta para continuar.
+            </p>
+
+        </div>
+
+        <form id="formLogin">
+
+            <div class="form-group">
+
+                <label for="email">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="seuemail@email.com"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="senha">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Digite sua senha"
+                    required
+                >
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn-cadastro"
+                id="btnLogin"
+            >
+                Entrar
+            </button>
+
+        </form>
+
+        <div
+            id="mensagem"
+            class="mensagem"
+        ></div>
+
+        <div class="login-link">
+
+            Ainda não possui uma conta?
+
+            <a href="cadastro.html">
+                Criar conta
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Biblioteca oficial do Supabase -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<!-- Configuração do Supabase -->
+
+<script src="js/supabase.js"></script>
+
+
+<script>
+
+    const formLogin =
+        document.getElementById("formLogin");
+
+    const btnLogin =
+        document.getElementById("btnLogin");
+
+    const mensagem =
+        document.getElementById("mensagem");
+
+
+    formLogin.addEventListener(
+        "submit",
+        async function(event) {
+
+            event.preventDefault();
+
+
+            const email =
+                document
+                    .getElementById("email")
+                    .value
+                    .trim();
+
+            const senha =
+                document
+                    .getElementById("senha")
+                    .value;
+
+
+            mensagem.className =
+                "mensagem";
+
+            mensagem.textContent = "";
+
+
+            btnLogin.disabled = true;
+
+            btnLogin.textContent =
+                "Entrando...";
+
+
+            try {
+
+                const { data, error } =
+                    await supabaseClient.auth.signInWithPassword({
+
+                        email: email,
+
+                        password: senha
+
+                    });
+
+
+                if (error) {
+
+                    throw error;
+
+                }
+
+
+                mensagem.className =
+                    "mensagem sucesso";
+
+                mensagem.textContent =
+                    "Login realizado com sucesso!";
+
+
+                setTimeout(function() {
+
+                    window.location.href =
+                        "dashboard.html";
+
+                }, 800);
+
+
+            } catch (error) {
+
+                console.error(error);
+
+
+                mensagem.className =
+                    "mensagem erro";
+
+
+                if (
+                    error.message
+                    .toLowerCase()
+                    .includes("invalid login credentials")
+                ) {
+
+                    mensagem.textContent =
+                        "E-mail ou senha incorretos.";
+
+                } else {
+
+                    mensagem.textContent =
+                        error.message ||
+                        "Não foi possível entrar na sua conta.";
+
+                }
+
+            } finally {
+
+                btnLogin.disabled = false;
+
+                btnLogin.textContent =
+                    "Entrar";
+
+            }
+
+        }
+    );
+
+</script>
+```
+
+</body>
+
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXA | Serviços</title>
+
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/servicos.css">
+</head>
+
+<body>
+
+    <main class="servicos-container">
+
+        <!-- CABEÇALHO -->
+        <header class="servicos-header">
+
+            <a href="dashboard.html" class="voltar">
+                ← Dashboard
+            </a>
+
+            <div class="logo">
+                <h1>NEXA<span>.</span></h1>
+                <p>Gestão inteligente para sua empresa</p>
+            </div>
+
+        </header>
+
+
+        <!-- TÍTULO -->
+        <section class="servicos-titulo">
+
+            <span class="tag">
+                GESTÃO DE SERVIÇOS
+            </span>
+
+            <h2>
+                Seus serviços
+            </h2>
+
+            <p>
+                Cadastre, acompanhe e gerencie os serviços da sua empresa.
+            </p>
+
+        </section>
+
+
+        <!-- RESUMO -->
+        <section class="servicos-resumo">
+
+            <div class="resumo-card">
+                <span>Total de serviços</span>
+                <strong id="totalServicos">0</strong>
+            </div>
+
+            <div class="resumo-card">
+                <span>Em andamento</span>
+                <strong id="totalAndamento">0</strong>
+            </div>
+
+            <div class="resumo-card">
+                <span>Concluídos</span>
+                <strong id="totalConcluidos">0</strong>
+            </div>
+
+        </section>
+
+
+        <!-- LISTA -->
+        <section class="servicos-card">
+
+            <div class="lista-header">
+
+                <div>
+                    <h3>
+                        Serviços cadastrados
+                    </h3>
+
+                    <p>
+                        Gerencie os serviços da sua empresa.
+                    </p>
+                </div>
+
+                <button
+                    id="btnNovoServico"
+                    class="btn-salvar"
+                    type="button"
+                >
+                    + Novo serviço
+                </button>
+
+            </div>
+
+
+            <!-- BUSCA -->
+            <div class="busca-container">
+
+                <input
+                    type="search"
+                    id="buscaServico"
+                    placeholder="Pesquisar serviço ou cliente..."
+                >
+
+            </div>
+
+
+            <!-- TABELA -->
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Serviço</th>
+                            <th>Cliente</th>
+                            <th>Valor</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="listaServicos">
+
+                        <tr>
+                            <td colspan="5">
+                                Carregando serviços...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- FORMULÁRIO -->
+        <section
+            class="servicos-card formulario-card"
+            id="formularioCard"
+        >
+
+            <div class="servicos-titulo">
+
+                <h3 id="tituloFormulario">
+                    Novo serviço
+                </h3>
+
+                <p>
+                    Preencha os dados abaixo.
+                </p>
+
+            </div>
+
+
+            <form id="formServico">
+
+                <input
+                    type="hidden"
+                    id="servicoId"
+                >
+
+
+                <!-- CLIENTE -->
+                <div class="form-group">
+
+                    <label for="clienteId">
+                        Cliente *
+                    </label>
+
+                    <select
+                        id="clienteId"
+                        required
+                    >
+
+                        <option value="">
+                            Selecione um cliente
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- NOME -->
+                <div class="form-group">
+
+                    <label for="nomeServico">
+                        Nome do serviço *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nomeServico"
+                        placeholder="Ex: Manutenção de computador"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- VALOR + STATUS -->
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="valor">
+                            Valor
+                        </label>
+
+                        <input
+                            type="number"
+                            id="valor"
+                            placeholder="0,00"
+                            min="0"
+                            step="0.01"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="status">
+                            Status
+                        </label>
+
+                        <select id="status">
+
+                            <option value="Em andamento">
+                                Em andamento
+                            </option>
+
+                            <option value="Concluído">
+                                Concluído
+                            </option>
+
+                            <option value="Cancelado">
+                                Cancelado
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DESCRIÇÃO -->
+                <div class="form-group">
+
+                    <label for="descricao">
+                        Descrição
+                    </label>
+
+                    <textarea
+                        id="descricao"
+                        rows="4"
+                        placeholder="Descreva o serviço..."
+                    ></textarea>
+
+                </div>
+
+
+                <!-- MENSAGEM -->
+                <div
+                    id="mensagem"
+                    class="mensagem"
+                ></div>
+
+
+                <!-- BOTÕES -->
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        id="btnCancelar"
+                        class="btn-cancelar"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="btnSalvar"
+                        class="btn-salvar"
+                    >
+                        Salvar serviço
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+        <footer class="servicos-footer">
+
+            NEXA © 2026 — Gestão inteligente
+
+        </footer>
+
+    </main>
+
+
+    <!-- SUPABASE -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase.js"></script>
+
+    <!-- JAVASCRIPT DA PÁGINA -->
+    <script src="js/servicos.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXA | Gestão de clientes</title>
+
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/clientes.css">
+    <link rel="stylesheet" href="css/tema.css">
+</head>
+
+<body>
+
+    <main class="clientes-container">
+
+        <header class="clientes-header">
+            <a href="dashboard.html" class="voltar">
+                ← Dashboard
+            </a>
+
+            <div class="logo">
+                <h1>NEXA<span>.</span></h1>
+                <p>Gestão inteligente para sua empresa</p>
+            </div>
+        </header>
+
+        <section class="clientes-titulo">
+            <span class="tag">GESTÃO DE CLIENTES</span>
+            <h2>Seus clientes</h2>
+            <p>Cadastre, pesquise e gerencie seus contatos.</p>
+        </section>
+
+        <section class="clientes-resumo">
+            <div class="resumo-card">
+                <span>Total de clientes</span>
+                <strong id="totalClientes">0</strong>
+            </div>
+        </section>
+
+        <section class="clientes-card">
+
+            <div class="lista-header">
+                <div>
+                    <h3>Clientes cadastrados</h3>
+                    <p>Gerencie os contatos da sua empresa.</p>
+                </div>
+
+                <button id="btnNovoCliente" class="btn-salvar">
+                    + Novo cliente
+                </button>
+            </div>
+
+            <div class="busca-container">
+                <input
+                    type="search"
+                    id="buscaCliente"
+                    placeholder="Pesquisar por nome, telefone ou e-mail..."
+                >
+            </div>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaClientes">
+                        <tr>
+                            <td colspan="4">Carregando clientes...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <section class="clientes-card formulario-card" id="formularioCard">
+
+            <div class="clientes-titulo">
+                <h3 id="tituloFormulario">Novo cliente</h3>
+                <p>Preencha os dados abaixo.</p>
+            </div>
+
+            <form id="formCliente">
+
+                <input type="hidden" id="clienteId">
+
+                <div class="form-group">
+                    <label for="nome">Nome completo *</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Nome do cliente"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input
+                            type="tel"
+                            id="telefone"
+                            placeholder="(12) 99999-9999"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="cliente@email.com"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="observacoes">Observações</label>
+                    <textarea
+                        id="observacoes"
+                        rows="4"
+                        placeholder="Informações adicionais..."
+                    ></textarea>
+                </div>
+
+                <div id="mensagem" class="mensagem"></div>
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        id="btnCancelar"
+                        class="btn-cancelar"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="btnSalvar"
+                        class="btn-salvar"
+                    >
+                        Salvar cliente
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+        <footer class="clientes-footer">
+            NEXA © 2026 — Gestão inteligente
+        </footer>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/clientes.js"></script>
+<script src="js/tema.js"></script>
+</body>
+</html>

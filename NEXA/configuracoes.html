@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NEXA | Configurações</title>
+
+    <link
+        rel="stylesheet"
+        href="css/configuracoes.css"
+    >
+<link rel="stylesheet" href="css/tema.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ESTRUTURA PRINCIPAL
+    ========================== -->
+
+    <div class="app">
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <!-- LOGO -->
+
+            <div class="logo-area">
+
+                <div class="logo">
+                    NEXA<span>.</span>
+                </div>
+
+                <p class="logo-subtitle">
+                    Gestão inteligente
+                </p>
+
+            </div>
+
+
+            <!-- MENU -->
+
+            <nav class="menu">
+
+                <a
+                    href="dashboard.html"
+                    class="menu-item"
+                    data-page="dashboard"
+                >
+                    <span class="menu-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a
+                    href="clientes.html"
+                    class="menu-item"
+                    data-page="clientes"
+                >
+                    <span class="menu-icon">♙</span>
+                    <span>Clientes</span>
+                </a>
+
+
+                <a
+                    href="servicos.html"
+                    class="menu-item"
+                    data-page="servicos"
+                >
+                    <span class="menu-icon">▣</span>
+                    <span>Serviços</span>
+                </a>
+
+
+                <a
+                    href="agendamentos.html"
+                    class="menu-item"
+                    data-page="agendamentos"
+                >
+                    <span class="menu-icon">◷</span>
+                    <span>Agendamentos</span>
+                </a>
+
+
+                <a
+                    href="produtos.html"
+                    class="menu-item"
+                    data-page="produtos"
+                >
+                    <span class="menu-icon">□</span>
+                    <span>Produtos e estoque</span>
+                </a>
+
+
+                <a
+                    href="financeiro.html"
+                    class="menu-item"
+                    data-page="financeiro"
+                >
+                    <span class="menu-icon">R$</span>
+                    <span>Financeiro</span>
+                </a>
+
+
+                <a
+                    href="relatorios.html"
+                    class="menu-item"
+                    data-page="relatorios"
+                >
+                    <span class="menu-icon">▥</span>
+                    <span>Relatórios</span>
+                </a>
+
+
+                <a
+                    href="configuracoes.html"
+                    class="menu-item active"
+                    data-page="configuracoes"
+                >
+                    <span class="menu-icon">⚙</span>
+                    <span>Configurações</span>
+                </a>
+
+
+                <a
+                    href="ajuda.html"
+                    class="menu-item"
+                    data-page="ajuda"
+                >
+                    <span class="menu-icon">?</span>
+                    <span>Central de ajuda</span>
+                </a>
+
+            </nav>
+
+
+            <!-- USUÁRIO -->
+
+            <div class="sidebar-user">
+
+                <div
+                    class="avatar"
+                    id="avatarUsuario"
+                >
+                    U
+                </div>
+
+                <div class="user-info">
+
+                    <strong id="nomeUsuario">
+                        Usuário
+                    </strong>
+
+                    <span>
+                        Conta ativa
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="btnLogout"
+                    class="btn-logout"
+                    title="Sair da conta"
+                >
+                    ↪
+                </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =========================
+             CONTEÚDO PRINCIPAL
+        ========================== -->
+
+        <main class="main">
+
+
+            <!-- =========================
+                 TOPBAR
+            ========================== -->
+
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        type="button"
+                        class="btn-menu"
+                        id="btnMenu"
+                        aria-label="Abrir menu"
+                    >
+                        ☰
+                    </button>
+
+
+                    <div class="page-heading">
+
+                        <span class="eyebrow">
+                            NEXA • CONTA
+                        </span>
+
+                        <h1>
+                            Configurações
+                        </h1>
+
+                        <p>
+                            Gerencie seus dados e sua conta.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <span
+                        class="current-date"
+                        id="dataAtual"
+                    >
+                    </span>
+
+
+                    <button
+                        type="button"
+                        class="theme-button"
+                        id="btnTema"
+                        title="Alterar tema"
+                    >
+                        ☾
+                    </button>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =========================
+                 CONTEÚDO
+            ========================== -->
+
+            <section class="content">
+
+
+                <!-- =========================
+                     INTRODUÇÃO
+                ========================== -->
+
+                <div class="settings-intro">
+
+                    <div>
+
+                        <span class="section-label">
+                            CONFIGURAÇÕES DA CONTA
+                        </span>
+
+                        <h2>
+                            Seu espaço pessoal
+                        </h2>
+
+                        <p>
+                            Atualize suas informações e
+                            gerencie a segurança da sua conta NEXA.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     GRID DE CONFIGURAÇÕES
+                ========================== -->
+
+                <div class="settings-grid">
+
+
+                    <!-- =========================
+                         PERFIL
+                    ========================== -->
+
+                    <section class="settings-card profile-card">
+
+                        <div class="card-header">
+
+                            <div class="card-icon">
+                                ◉
+                            </div>
+
+                            <div>
+
+                                <span class="card-label">
+                                    PERFIL
+                                </span>
+
+                                <h3>
+                                    Informações pessoais
+                                </h3>
+
+                                <p>
+                                    Atualize os dados exibidos
+                                    na sua conta.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <form id="formPerfil">
+
+
+                            <!-- NOME -->
+
+                            <div class="form-group">
+
+                                <label for="nomePerfil">
+                                    Nome
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nomePerfil"
+                                    name="nome"
+                                    placeholder="Seu nome"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div class="form-group">
+
+                                <label for="emailPerfil">
+                                    E-mail
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="emailPerfil"
+                                    name="email"
+                                    placeholder="seu@email.com"
+                                    autocomplete="email"
+                                    disabled
+                                >
+
+                                <small>
+                                    O e-mail da conta é gerenciado
+                                    pelo sistema de autenticação.
+                                </small>
+
+                            </div>
+
+
+                            <!-- BOTÃO -->
+
+                            <div class="form-actions">
+
+                                <button
+                                    type="submit"
+                                    class="btn-primary"
+                                    id="btnSalvarPerfil"
+                                >
+                                    Salvar alterações
+                                </button>
+
+                            </div>
+
+
+                            <!-- MENSAGEM -->
+
+                            <div
+                                class="form-message"
+                                id="mensagemPerfil"
+                                role="status"
+                            >
+                            </div>
+
+                        </form>
+
+                    </section>
+
+
+
+                    <!-- =========================
+                         SEGURANÇA
+                    ========================== -->
+
+                    <section class="settings-card">
+
+                        <div class="card-header">
+
+                            <div class="card-icon">
+                                🔒
+                            </div>
+
+                            <div>
+
+                                <span class="card-label">
+                                    SEGURANÇA
+                                </span>
+
+                                <h3>
+                                    Segurança da conta
+                                </h3>
+
+                                <p>
+                                    Proteja o acesso ao seu
+                                    espaço NEXA.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="security-content">
+
+
+                            <!-- ALTERAR SENHA -->
+
+                            <div class="security-item">
+
+                                <div class="security-info">
+
+                                    <strong>
+                                        Senha
+                                    </strong>
+
+                                    <span>
+                                        Altere sua senha de acesso
+                                        regularmente.
+                                    </span>
+
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="btn-secondary"
+                                    id="btnAlterarSenha"
+                                >
+                                    Alterar senha
+                                </button>
+
+                            </div>
+
+
+                            <!-- DIVISOR -->
+
+                            <div class="divider"></div>
+
+
+                            <!-- SAIR -->
+
+                            <div class="security-item">
+
+                                <div class="security-info">
+
+                                    <strong>
+                                        Encerrar sessão
+                                    </strong>
+
+                                    <span>
+                                        Sair da sua conta neste dispositivo.
+                                    </span>
+
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="btn-danger"
+                                    id="btnSair"
+                                >
+                                    Sair da conta
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =========================
+                         INFORMAÇÕES DA CONTA
+                    ========================== -->
+
+                    <section class="settings-card account-card">
+
+                        <div class="card-header">
+
+                            <div class="card-icon">
+                                ◇
+                            </div>
+
+                            <div>
+
+                                <span class="card-label">
+                                    CONTA
+                                </span>
+
+                                <h3>
+                                    Informações da conta
+                                </h3>
+
+                                <p>
+                                    Dados básicos da sua conta NEXA.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="account-info">
+
+
+                            <!-- ID -->
+
+                            <div class="info-row">
+
+                                <span>
+                                    ID da conta
+                                </span>
+
+                                <strong
+                                    id="idConta"
+                                    class="account-id"
+                                >
+                                    Carregando...
+                                </strong>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div class="info-row">
+
+                                <span>
+                                    E-mail
+                                </span>
+
+                                <strong id="emailConta">
+                                    Carregando...
+                                </strong>
+
+                            </div>
+
+
+                            <!-- CRIAÇÃO -->
+
+                            <div class="info-row">
+
+                                <span>
+                                    Conta criada em
+                                </span>
+
+                                <strong id="dataCriacao">
+                                    Carregando...
+                                </strong>
+
+                            </div>
+
+
+                            <!-- STATUS -->
+
+                            <div class="info-row">
+
+                                <span>
+                                    Status
+                                </span>
+
+                                <strong class="status-active">
+                                    ● Ativa
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- =========================
+                         ÁREA DE SAÍDA
+                    ========================== -->
+
+                    <section class="settings-card danger-card">
+
+                        <div class="card-header">
+
+                            <div class="card-icon danger-icon">
+                                !
+                            </div>
+
+                            <div>
+
+                                <span class="card-label">
+                                    SESSÃO
+                                </span>
+
+                                <h3>
+                                    Sair do NEXA
+                                </h3>
+
+                                <p>
+                                    Encerre sua sessão com segurança
+                                    neste dispositivo.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="btn-danger large"
+                            id="btnSairFinal"
+                        >
+                            Sair da conta
+                        </button>
+
+                    </section>
+
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================
+         SUPABASE
+    ========================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase.js"></script>
+
+    <script src="js/configuracoes.js"></script>
+
+    <script src="js/tema.js"></script>
+</body>
+
+</html>

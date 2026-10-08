@@ -1,0 +1,159 @@
+/* =========================================
+   NEXA — SISTEMA GLOBAL DE TEMA
+========================================= */
+
+/* Tema claro */
+html.light-mode {
+    --bg: #f4f6f5;
+    --bg-secondary: #ffffff;
+    --card: #ffffff;
+    --card-hover: #f8faf9;
+    --border: #dfe5e2;
+
+    --text: #18201c;
+    --text-secondary: #56615b;
+    --text-muted: #7a8580;
+
+    --green: #18a558;
+    --green-dark: #128344;
+
+    --danger: #dc3545;
+
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Fundo geral */
+html.light-mode body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Transição suave */
+body,
+.sidebar,
+.topbar,
+.stat-card,
+.panel,
+.settings-card,
+.form-card,
+.table-wrap,
+.quick-action,
+input,
+select,
+textarea,
+button {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Elementos comuns */
+html.light-mode .topbar {
+    background: var(--bg-secondary);
+    border-bottom-color: var(--border);
+}
+
+html.light-mode .stat-card,
+html.light-mode .panel,
+html.light-mode .settings-card,
+html.light-mode .form-card {
+    background: var(--card);
+    border-color: var(--border);
+    box-shadow: var(--shadow);
+}
+
+html.light-mode input,
+html.light-mode select,
+html.light-mode textarea {
+    background: #ffffff;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+html.light-mode input::placeholder,
+html.light-mode textarea::placeholder {
+    color: #9aa39e;
+}
+
+html.light-mode table {
+    color: var(--text);
+}
+
+html.light-mode th {
+    color: var(--text-secondary);
+    border-bottom-color: var(--border);
+}
+
+html.light-mode td {
+    border-bottom-color: var(--border);
+}
+
+html.light-mode .icon-button {
+    background: #f1f4f2;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+html.light-mode .icon-button:hover {
+    background: #e8eeea;
+}
+
+html.light-mode .menu-mobile {
+    background: #ffffff;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+/* Textos secundários */
+html.light-mode .welcome-description,
+html.light-mode .panel-header p,
+html.light-mode .stat-card p,
+html.light-mode .settings-description {
+    color: var(--text-secondary);
+}
+
+/* Links e textos verdes continuam verdes */
+html.light-mode .green-text {
+    color: var(--green);
+}
+
+/* Botões */
+html.light-mode .text-button {
+    color: var(--green);
+}
+
+/* Tabelas */
+html.light-mode .table-wrap {
+    background: var(--card);
+    border-color: var(--border);
+}
+
+/* Cards de ações */
+html.light-mode .quick-action {
+    background: #ffffff;
+    border-color: var(--border);
+}
+
+html.light-mode .quick-action:hover {
+    background: #f5f8f6;
+}
+
+/* Avatar */
+html.light-mode .avatar {
+    color: #ffffff;
+}
+
+/* Scrollbar */
+html.light-mode ::-webkit-scrollbar-track {
+    background: #edf1ef;
+}
+
+html.light-mode ::-webkit-scrollbar-thumb {
+    background: #c6cfca;
+}
+
+html.light-mode ::-webkit-scrollbar-thumb:hover {
+    background: #aeb9b3;
+}
