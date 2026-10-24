@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agenda Mais | Horários</title>
+
+    <link rel="stylesheet" href="css/horarios.css">
+</head>
+<body>
+
+    <header class="topo">
+        <div class="topo-conteudo">
+            <a class="marca" href="dashboard.html">Agenda Mais</a>
+            <a class="link-voltar" href="dashboard.html">Voltar ao painel</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="introducao">
+            <span class="etiqueta">CONFIGURAÇÕES</span>
+            <h1>Horários de funcionamento</h1>
+            <p>
+                Defina os dias e horários em que seu estabelecimento
+                estará disponível para atender seus clientes.
+            </p>
+        </section>
+
+        <section class="cartao">
+            <div class="titulo-cartao">
+                <h2>Minha disponibilidade</h2>
+                <p>Ative os dias de atendimento e configure os horários.</p>
+            </div>
+
+            <form id="horariosForm">
+                <section id="listaDias"></section>
+
+                <button class="botao-principal" type="submit">
+                    Salvar horários
+                </button>
+            </form>
+
+            <p id="mensagem" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/proteger-horarios.js"></script>
+    <script src="js/horarios.js"></script>
+
+</body>
+</html>
+

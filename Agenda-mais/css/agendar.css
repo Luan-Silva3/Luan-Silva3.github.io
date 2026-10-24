@@ -1,0 +1,370 @@
+
+:root {
+    --fundo: #f4f7fb;
+    --branco: #ffffff;
+    --texto: #182230;
+    --texto-secundario: #667085;
+    --azul: #175cd3;
+    --azul-hover: #1849a9;
+    --borda: #e4e7ec;
+    --verde-claro: #ecfdf3;
+    --verde: #027a48;
+    --sombra: 0 12px 35px rgba(16, 24, 40, 0.07);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+a {
+    text-decoration: none;
+}
+
+.cabecalho {
+    min-height: 76px;
+    padding: 16px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--texto);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.logo strong {
+    color: var(--azul);
+}
+
+.logo-icone {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--azul);
+    color: white;
+    font-size: 22px;
+}
+
+.link-voltar {
+    color: var(--texto-secundario);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.link-voltar:hover {
+    color: var(--azul);
+}
+
+.pagina {
+    width: min(100% - 32px, 680px);
+    margin: 0 auto;
+    padding: 52px 0 24px;
+}
+
+.introducao {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.etiqueta {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--azul);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.introducao h1 {
+    max-width: 580px;
+    margin: 0 auto 14px;
+    font-size: clamp(30px, 5vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -1.2px;
+}
+
+.introducao p {
+    max-width: 490px;
+    margin: 0 auto;
+    color: var(--texto-secundario);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.cartao-agendamento {
+    padding: 32px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+}
+
+.titulo-cartao {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.icone-calendario {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: #eff4ff;
+    color: var(--azul);
+    font-size: 28px;
+}
+
+.titulo-cartao h2 {
+    margin-bottom: 6px;
+    font-size: 22px;
+}
+
+.titulo-cartao p {
+    color: var(--texto-secundario);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#agendarForm {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid #d0d5dd;
+    border-radius: 10px;
+    background: white;
+    color: var(--texto);
+    font: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo input:focus,
+.campo select:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(23, 92, 211, 0.12);
+}
+
+.campo input::placeholder {
+    color: #98a2b3;
+}
+
+.campo select:disabled {
+    background: #f2f4f7;
+    color: #98a2b3;
+    cursor: not-allowed;
+}
+
+.campo small {
+    color: var(--texto-secundario);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.botao {
+    width: 100%;
+    min-height: 49px;
+    padding: 13px 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    border-radius: 10px;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.botao:hover {
+    transform: translateY(-1px);
+}
+
+.botao:focus-visible {
+    outline: 3px solid #84adff;
+    outline-offset: 3px;
+}
+
+.botao-principal {
+    background: var(--azul);
+    color: white;
+}
+
+.botao-principal:hover {
+    background: var(--azul-hover);
+}
+
+.botao-secundario {
+    margin-top: -4px;
+    background: #eff4ff;
+    color: var(--azul);
+    border: 1px solid #d1e0ff;
+}
+
+.botao-secundario:hover {
+    background: #dbe8ff;
+}
+
+.botao:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.aviso {
+    color: var(--texto-secundario);
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+#mensagem {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+#mensagem:empty {
+    display: none;
+}
+
+.rodape {
+    padding: 28px 8px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+.rodape span {
+    color: var(--azul);
+    font-weight: 700;
+}
+
+@media (max-width: 480px) {
+    .cabecalho {
+        min-height: 66px;
+        padding: 13px 16px;
+        gap: 12px;
+    }
+
+    .logo {
+        gap: 8px;
+        font-size: 17px;
+    }
+
+    .logo-icone {
+        width: 34px;
+        height: 34px;
+        font-size: 19px;
+    }
+
+    .link-voltar {
+        font-size: 12px;
+        text-align: right;
+    }
+
+    .pagina {
+        width: calc(100% - 24px);
+        padding-top: 34px;
+    }
+
+    .introducao {
+        margin-bottom: 24px;
+    }
+
+    .introducao h1 {
+        font-size: 31px;
+        letter-spacing: -0.7px;
+    }
+
+    .introducao p {
+        font-size: 14px;
+    }
+
+    .cartao-agendamento {
+        padding: 22px 17px;
+        border-radius: 16px;
+    }
+
+    .titulo-cartao {
+        gap: 11px;
+        margin-bottom: 24px;
+    }
+
+    .icone-calendario {
+        width: 42px;
+        height: 42px;
+        font-size: 24px;
+    }
+
+    .titulo-cartao h2 {
+        font-size: 19px;
+    }
+
+    .titulo-cartao p {
+        font-size: 12px;
+    }
+
+    #agendarForm {
+        gap: 17px;
+    }
+
+    .campo input,
+    .campo select {
+        min-height: 48px;
+        font-size: 16px;
+    }
+
+    .rodape {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 23px;
+    }
+}

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Encontrar empresas | Agenda Mais</title>
+    <meta name="description" content="Encontre estabelecimentos e serviços para agendar seu próximo horário.">
+
+    <link rel="stylesheet" href="css/empresas.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="index.html" class="logo">
+            <span class="logo-icone">A</span>
+            <span>Agenda <strong>Mais</strong></span>
+        </a>
+
+        <a href="index.html" class="link-voltar">Voltar ao início</a>
+    </header>
+
+    <main class="pagina">
+        <section class="introducao">
+            <span class="etiqueta">AGENDA MAIS</span>
+            <h1>Encontre o lugar ideal para você.</h1>
+            <p>Pesquise por nome ou categoria e encontre os serviços que deseja agendar.</p>
+        </section>
+
+        <section class="busca">
+            <label for="buscaEmpresa">Qual estabelecimento você procura?</label>
+
+            <input
+                type="search"
+                id="buscaEmpresa"
+                placeholder="Ex.: Barbearia do João"
+                autocomplete="off"
+            >
+
+            <label for="filtroCategoria">Filtrar por categoria</label>
+
+            <select id="filtroCategoria">
+                <option value="">Todas as categorias</option>
+            </select>
+        </section>
+
+        <section class="resultados">
+            <div class="titulo-resultados">
+                <h2>Estabelecimentos</h2>
+                <span id="totalEmpresas">Carregando...</span>
+            </div>
+
+            <p id="mensagem" role="status" aria-live="polite"></p>
+
+            <div id="listaEmpresas" class="lista-empresas"></div>
+        </section>
+
+        <footer class="rodape">
+            <p>Encontre. Escolha. Agende.</p>
+            <span>Agenda Mais</span>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/empresas.js"></script>
+
+</body>
+</html>

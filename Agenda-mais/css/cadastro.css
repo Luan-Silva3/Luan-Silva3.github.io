@@ -1,0 +1,227 @@
+
+:root {
+    --fundo: #f4f7fb;
+    --texto: #182230;
+    --texto-secundario: #667085;
+    --azul: #175cd3;
+    --azul-hover: #1849a9;
+    --borda: #d0d5dd;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+    background: var(--fundo);
+    line-height: 1.5;
+}
+
+.pagina-cadastro {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 28px 16px;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(23, 92, 211, 0.09),
+            transparent 35%
+        ),
+        var(--fundo);
+}
+
+.cartao-cadastro {
+    width: 100%;
+    max-width: 480px;
+    padding: 36px;
+    background: #ffffff;
+    border: 1px solid #eaecf0;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(16, 24, 40, 0.07);
+}
+
+.marca {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.marca strong {
+    color: var(--azul);
+}
+
+.marca-icone {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 11px;
+    background: var(--azul);
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.cabecalho-cadastro {
+    margin-bottom: 25px;
+}
+
+.etiqueta {
+    color: var(--azul);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.cabecalho-cadastro h1 {
+    margin: 8px 0;
+    font-size: clamp(25px, 5vw, 30px);
+    line-height: 1.25;
+    letter-spacing: -0.8px;
+}
+
+.cabecalho-cadastro p {
+    margin: 0;
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+#cadastroForm {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo input {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--texto);
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo input::placeholder {
+    color: #98a2b3;
+}
+
+.campo input:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(23, 92, 211, 0.12);
+}
+
+.dica {
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+.botao-principal {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    margin-top: 5px;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--azul);
+    color: #ffffff;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.botao-principal:hover {
+    background: var(--azul-hover);
+}
+
+.botao-principal:active {
+    transform: scale(0.99);
+}
+
+.botao-principal:focus-visible {
+    outline: 3px solid rgba(23, 92, 211, 0.3);
+    outline-offset: 3px;
+}
+
+#mensagem {
+    margin: 14px 0 0;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.divisor {
+    height: 1px;
+    margin: 23px 0 18px;
+    background: #eaecf0;
+}
+
+.texto-login {
+    margin: 0;
+    text-align: center;
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+.texto-login a {
+    color: var(--azul);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.texto-login a:hover {
+    text-decoration: underline;
+}
+
+.rodape {
+    margin: 25px 0 0;
+    color: #98a2b3;
+    font-size: 12px;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .pagina-cadastro {
+        padding: 16px 12px;
+        align-items: flex-start;
+    }
+
+    .cartao-cadastro {
+        padding: 26px 21px;
+        border-radius: 14px;
+    }
+
+    .marca {
+        margin-bottom: 24px;
+    }
+}

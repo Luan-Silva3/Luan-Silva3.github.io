@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agenda Mais | Criar conta</title>
+
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+
+    <main class="pagina-cadastro">
+        <section class="cartao-cadastro">
+
+            <a href="login.html" class="marca">
+                <span class="marca-icone">A</span>
+                <span>Agenda <strong>Mais</strong></span>
+            </a>
+
+            <div class="cabecalho-cadastro">
+                <span class="etiqueta">COMECE AGORA</span>
+                <h1>Criar minha conta</h1>
+                <p>Cadastre seu estabelecimento e organize seus atendimentos em um só lugar.</p>
+            </div>
+
+            <form id="cadastroForm">
+
+                <div class="campo">
+                    <label for="nomeCliente">Seu nome</label>
+                    <input
+                        type="text"
+                        id="nomeCliente"
+                        name="nome"
+                        placeholder="Digite seu nome completo"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="nomeEstabelecimento">Nome do estabelecimento</label>
+                    <input
+                        type="text"
+                        id="nomeEstabelecimento"
+                        name="nomeEstabelecimento"
+                        placeholder="Ex.: Studio Beleza"
+                        autocomplete="organization"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="voce@exemplo.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Crie uma senha"
+                        autocomplete="new-password"
+                        minlength="6"
+                        required
+                    >
+                    <span class="dica">Use pelo menos 6 caracteres.</span>
+                </div>
+
+                <div class="campo">
+                    <label for="confirmarSenha">Confirmar senha</label>
+                    <input
+                        type="password"
+                        id="confirmarSenha"
+                        name="confirmarSenha"
+                        placeholder="Digite a senha novamente"
+                        autocomplete="new-password"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="botao-principal">
+                    Criar minha conta
+                </button>
+
+            </form>
+
+            <p id="mensagem" aria-live="polite"></p>
+
+            <div class="divisor"></div>
+
+            <p class="texto-login">
+                Já tem uma conta?
+                <a href="login.html">Entrar</a>
+            </p>
+
+            <p class="rodape">Agenda Mais · Sua rotina organizada</p>
+
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/cadastro.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+
+:root {
+    --fundo: #f4f7fb;
+    --branco: #ffffff;
+    --texto: #182230;
+    --secundario: #667085;
+    --azul: #175cd3;
+    --borda: #e4e7ec;
+    --sombra: 0 8px 28px rgba(16, 24, 40, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.cabecalho {
+    min-height: 72px;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--texto);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.logo strong,
+.rodape span {
+    color: var(--azul);
+}
+
+.logo-icone {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--azul);
+    color: white;
+    font-size: 22px;
+}
+
+.link-voltar {
+    color: var(--secundario);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.link-voltar:hover {
+    color: var(--azul);
+}
+
+.pagina {
+    width: min(100% - 32px, 1000px);
+    margin: 0 auto;
+    padding: 52px 0 28px;
+}
+
+.introducao {
+    max-width: 680px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+.etiqueta {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--azul);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.introducao h1 {
+    margin-bottom: 14px;
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.introducao p {
+    color: var(--secundario);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.busca {
+    max-width: 720px;
+    margin: 0 auto 42px;
+    padding: 24px;
+    display: grid;
+    gap: 10px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+}
+
+.busca label {
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.busca input,
+.busca select {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid #d0d5dd;
+    border-radius: 10px;
+    background: white;
+    color: var(--texto);
+    font: inherit;
+    font-size: 16px;
+    outline: none;
+}
+
+.busca input:focus,
+.busca select:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(23, 92, 211, 0.12);
+}
+
+.resultados {
+    min-height: 160px;
+}
+
+.titulo-resultados {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.titulo-resultados h2 {
+    font-size: 22px;
+}
+
+#totalEmpresas {
+    color: var(--secundario);
+    font-size: 13px;
+}
+
+.lista-empresas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.empresa-card {
+    min-width: 0;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+}
+
+.empresa-icone {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: #eff4ff;
+    color: var(--azul);
+    font-size: 23px;
+}
+
+.empresa-card h3 {
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+    font-size: 18px;
+}
+
+.empresa-categoria {
+    margin-bottom: 14px;
+    color: var(--azul);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.empresa-servicos {
+    margin-bottom: 20px;
+    color: var(--secundario);
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.botao-servicos {
+    width: 100%;
+    min-height: 46px;
+    margin-top: auto;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--azul);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.botao-servicos:hover {
+    background: #1849a9;
+}
+
+#mensagem {
+    margin-bottom: 16px;
+    color: var(--secundario);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.rodape {
+    margin-top: 48px;
+    padding: 24px 0 8px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    border-top: 1px solid var(--borda);
+    color: var(--secundario);
+    font-size: 12px;
+}
+
+.rodape span {
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    .cabecalho {
+        padding: 13px 16px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .logo-icone {
+        width: 34px;
+        height: 34px;
+    }
+
+    .link-voltar {
+        font-size: 12px;
+    }
+
+    .pagina {
+        width: calc(100% - 24px);
+        padding-top: 34px;
+    }
+
+    .introducao h1 {
+        font-size: 32px;
+    }
+
+    .introducao p {
+        font-size: 14px;
+    }
+
+    .busca {
+        padding: 18px;
+        margin-bottom: 32px;
+    }
+
+    .lista-empresas {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .empresa-card {
+        padding: 19px;
+    }
+
+    .titulo-resultados h2 {
+        font-size: 19px;
+    }
+
+    .rodape {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

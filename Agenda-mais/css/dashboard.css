@@ -1,0 +1,261 @@
+
+:root {
+    --fundo: #f4f7fb;
+    --superficie: #ffffff;
+    --texto: #182230;
+    --texto-secundario: #667085;
+    --azul: #175cd3;
+    --azul-escuro: #101828;
+    --borda: #e4e7ec;
+    --verde: #12b76a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.topo {
+    min-height: 76px;
+    padding: 16px 6%;
+    background: var(--azul-escuro);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.marca-icone {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: #175cd3;
+    color: white;
+    font-size: 18px;
+}
+
+.botao-sair {
+    padding: 10px 16px;
+    border: 1px solid #475467;
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.botao-sair:hover {
+    background: #344054;
+}
+
+.container {
+    width: min(1120px, 88%);
+    margin: 0 auto;
+}
+
+.boas-vindas {
+    margin-top: 36px;
+    padding: 36px;
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    background: var(--superficie);
+    box-shadow: 0 4px 14px rgb(16 24 40 / 4%);
+}
+
+.subtitulo {
+    margin: 0 0 10px;
+    color: var(--azul);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.boas-vindas h1 {
+    margin: 0;
+    font-size: clamp(26px, 4vw, 36px);
+    line-height: 1.2;
+}
+
+.texto-boas-vindas {
+    max-width: 600px;
+    margin: 14px 0 24px;
+    color: var(--texto-secundario);
+}
+
+.estabelecimento {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 12px;
+    background: #f2f8ff;
+}
+
+.indicador {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--verde);
+}
+
+.rotulo {
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+.estabelecimento p {
+    margin: 2px 0 0;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.secao-funcoes {
+    margin-top: 36px;
+}
+
+.cabecalho-secao h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.cabecalho-secao p {
+    margin: 6px 0 20px;
+    color: var(--texto-secundario);
+}
+
+.grade-funcoes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.cartao-funcao {
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    background: var(--superficie);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cartao-funcao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgb(16 24 40 / 8%);
+}
+
+.icone-funcao {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: #eff8ff;
+    color: var(--azul);
+    font-size: 27px;
+}
+
+.cartao-funcao h3 {
+    margin: 20px 0 8px;
+    font-size: 18px;
+}
+
+.cartao-funcao p {
+    margin: 0 0 22px;
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+.link-cartao {
+    margin-top: auto;
+    color: var(--azul);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.rodape {
+    padding: 32px 0 24px;
+    color: var(--texto-secundario);
+    font-size: 13px;
+    text-align: center;
+}
+
+@media (max-width: 760px) {
+    .topo {
+        min-height: 68px;
+        padding: 14px 5%;
+    }
+
+    .marca {
+        gap: 8px;
+        font-size: 17px;
+    }
+
+    .marca-icone {
+        width: 36px;
+        height: 36px;
+    }
+
+    .botao-sair {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .boas-vindas {
+        margin-top: 24px;
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+
+    .grade-funcoes {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .cartao-funcao {
+        padding: 20px;
+    }
+
+    .cartao-funcao h3 {
+        margin-top: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}

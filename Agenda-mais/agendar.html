@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agenda Mais | Agendar horário</title>
+    <meta name="description" content="Agende seu horário de forma simples e rápida com o Agenda Mais.">
+
+    <link rel="stylesheet" href="css/agendar.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <a href="index.html" class="logo">
+            <span class="logo-icone">A</span>
+            <span>Agenda <strong>Mais</strong></span>
+        </a>
+
+        <a href="dashboard.html" class="link-voltar">
+            ← Voltar ao painel
+        </a>
+    </header>
+
+    <main class="pagina">
+        <section class="introducao">
+            <span class="etiqueta">AGENDAMENTO ONLINE</span>
+            <h1>Seu próximo horário começa aqui.</h1>
+            <p>
+                Escolha o serviço, encontre um horário disponível
+                e envie sua solicitação em poucos passos.
+            </p>
+        </section>
+
+        <section class="cartao-agendamento">
+            <div class="titulo-cartao">
+                <div class="icone-calendario" aria-hidden="true">▦</div>
+                <div>
+                    <h2>Agendar horário</h2>
+                    <p>Preencha os dados abaixo para continuar.</p>
+                </div>
+            </div>
+
+            <form id="agendarForm">
+
+                <div class="campo">
+                    <label for="servico">Serviço desejado</label>
+                    <select id="servico" required>
+                        <option value="">Carregando serviços...</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="nomeCliente">Seu nome completo</label>
+                    <input
+                        type="text"
+                        id="nomeCliente"
+                        placeholder="Digite seu nome"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="telefoneCliente">Seu telefone</label>
+                    <input
+                        type="tel"
+                        id="telefoneCliente"
+                        placeholder="(12) 99999-9999"
+                        autocomplete="tel"
+                        inputmode="tel"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="dataAgendamento">Data desejada</label>
+                    <input type="date" id="dataAgendamento" required>
+                </div>
+
+                <button
+                    type="button"
+                    id="btnBuscarHorarios"
+                    class="botao botao-secundario"
+                >
+                    Ver horários disponíveis
+                </button>
+
+                <div class="campo">
+                    <label for="horario">Escolha um horário</label>
+                    <select id="horario" required disabled>
+                        <option value="">Selecione uma data primeiro</option>
+                    </select>
+                    <small>Os horários dependem da disponibilidade do estabelecimento.</small>
+                </div>
+
+                <button type="submit" class="botao botao-principal">
+                    Solicitar agendamento
+                    <span aria-hidden="true">→</span>
+                </button>
+
+                <p class="aviso">
+                    O pedido será enviado para confirmação do estabelecimento.
+                </p>
+            </form>
+
+            <p id="mensagem" role="status" aria-live="polite"></p>
+        </section>
+
+        <footer class="rodape">
+            <p>Agende com praticidade. Organize seu tempo.</p>
+            <span>Agenda Mais</span>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/agendar.js"></script>
+
+</body>
+</html>
+

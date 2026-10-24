@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#101828">
+
+    <title>Agenda Mais | Painel</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <header class="topo">
+        <a href="dashboard.html" class="marca">
+            <span class="marca-icone">A+</span>
+            <span>Agenda Mais</span>
+        </a>
+
+        <button id="btnSair" class="botao-sair" type="button">
+            Sair da conta
+        </button>
+    </header>
+
+    <main class="container">
+
+        <section class="boas-vindas">
+            <p class="subtitulo">PAINEL DO ESTABELECIMENTO</p>
+
+            <h1>Bem-vindo ao Agenda Mais!</h1>
+
+            <p class="texto-boas-vindas">
+                Organize sua rotina e gerencie seus agendamentos
+                em um só lugar.
+            </p>
+
+            <div class="estabelecimento">
+                <span class="indicador"></span>
+
+                <div>
+                    <span class="rotulo">Seu estabelecimento</span>
+                    <p id="nomeEstabelecimento">Carregando...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-funcoes">
+
+            <div class="cabecalho-secao">
+                <div>
+                    <h2>Seu negócio</h2>
+                    <p>Escolha o que deseja gerenciar.</p>
+                </div>
+            </div>
+
+            <div class="grade-funcoes">
+
+                <a href="agendamentos.html" class="cartao-funcao">
+                    <span class="icone-funcao">▦</span>
+                    <h3>Agendamentos</h3>
+                    <p>Consulte, confirme e organize os compromissos.</p>
+                    <span class="link-cartao">Acessar <span aria-hidden="true">→</span></span>
+                </a>
+
+                <a href="servicos.html" class="cartao-funcao">
+                    <span class="icone-funcao">✂</span>
+                    <h3>Meus serviços</h3>
+                    <p>Cadastre serviços, preços e duração.</p>
+                    <span class="link-cartao">Acessar <span aria-hidden="true">→</span></span>
+                </a>
+
+                <a href="horarios.html" class="cartao-funcao">
+                    <span class="icone-funcao">◷</span>
+                    <h3>Horários</h3>
+                    <p>Configure os dias e horários de funcionamento.</p>
+                    <span class="link-cartao">Acessar <span aria-hidden="true">→</span></span>
+                </a>
+
+            </div>
+        </section>
+
+        <footer class="rodape">
+            <p>Agenda Mais · Organização para o seu negócio.</p>
+        </footer>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/proteger-dashboard.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

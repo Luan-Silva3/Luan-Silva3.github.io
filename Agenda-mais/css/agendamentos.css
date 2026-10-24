@@ -1,0 +1,355 @@
+
+:root {
+    --fundo: #f4f7fb;
+    --superficie: #ffffff;
+    --texto: #182230;
+    --texto-secundario: #667085;
+    --azul: #175cd3;
+    --azul-hover: #1849a9;
+    --borda: #e4e7ec;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+.topo {
+    background: #101828;
+    color: white;
+}
+
+.topo-conteudo {
+    max-width: 1100px;
+    min-height: 72px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.marca {
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.link-voltar {
+    color: #d1e0ff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.link-voltar:hover {
+    color: white;
+}
+
+.container {
+    width: min(100% - 32px, 1100px);
+    margin: 36px auto;
+}
+
+.introducao {
+    margin-bottom: 26px;
+}
+
+.etiqueta {
+    color: var(--azul);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.introducao h1 {
+    margin: 6px 0 8px;
+    font-size: clamp(26px, 4vw, 34px);
+    letter-spacing: -0.8px;
+}
+
+.introducao p,
+.titulo-cartao p {
+    color: var(--texto-secundario);
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Indicadores dos agendamentos */
+
+#resumoAgendamentos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.resumo-card {
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(16, 24, 40, 0.04);
+}
+
+.resumo-card h2 {
+    margin: 10px 0 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--texto-secundario);
+}
+
+.resumo-card p {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.resumo-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.pendente .resumo-icone {
+    background: #fff4e5;
+    color: #b54708;
+}
+
+.confirmado .resumo-icone {
+    background: #e0f2fe;
+    color: #175cd3;
+}
+
+.concluido .resumo-icone {
+    background: #dcfae6;
+    color: #067647;
+}
+
+.cancelado .resumo-icone {
+    background: #fee4e2;
+    color: #b42318;
+}
+
+/* Cartões e filtros */
+
+.cartao {
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 14px rgba(16, 24, 40, 0.04);
+}
+
+.titulo-cartao {
+    margin-bottom: 20px;
+}
+
+.titulo-cartao h2 {
+    margin: 0 0 5px;
+    font-size: 19px;
+}
+
+.campos-filtro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 16px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    background: white;
+    color: var(--texto);
+    font: inherit;
+    font-size: 14px;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: 2px solid rgba(23, 92, 211, 0.15);
+    border-color: var(--azul);
+}
+
+#btnFiltrar {
+    min-height: 44px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--azul);
+    color: white;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#btnFiltrar:hover {
+    background: var(--azul-hover);
+}
+
+#mensagem {
+    margin: 14px 0 0;
+    font-size: 14px;
+}
+
+/* Lista de compromissos */
+
+#listaAgendamentos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#listaAgendamentos > li {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    background: #fff;
+    overflow-wrap: anywhere;
+}
+
+#listaAgendamentos > li h3 {
+    margin: 0 0 10px;
+    font-size: 17px;
+}
+
+#listaAgendamentos > li p {
+    margin: 5px 0;
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+/* Botões criados pelo JavaScript */
+
+#listaAgendamentos button {
+    margin: 12px 8px 0 0;
+    padding: 9px 13px;
+    border: 1px solid var(--borda);
+    border-radius: 7px;
+    background: #fff;
+    color: var(--texto);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#listaAgendamentos button:hover {
+    background: #f2f4f7;
+}
+
+#listaAgendamentos button:focus-visible,
+#btnFiltrar:focus-visible {
+    outline: 3px solid rgba(23, 92, 211, 0.3);
+    outline-offset: 2px;
+}
+
+/* Layout para telas menores */
+
+@media (max-width: 800px) {
+    #resumoAgendamentos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .campos-filtro {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #btnFiltrar {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .topo-conteudo {
+        padding: 15px 18px;
+    }
+
+    .marca {
+        font-size: 19px;
+    }
+
+    .link-voltar {
+        font-size: 12px;
+    }
+
+    .container {
+        width: calc(100% - 24px);
+        margin: 24px auto;
+    }
+
+    #resumoAgendamentos {
+        gap: 10px;
+    }
+
+    .resumo-card {
+        padding: 15px;
+    }
+
+    .resumo-card p {
+        font-size: 26px;
+    }
+
+    .resumo-card h2 {
+        font-size: 13px;
+    }
+
+    .cartao {
+        padding: 20px 16px;
+    }
+
+    .campos-filtro {
+        grid-template-columns: 1fr;
+    }
+
+    #btnFiltrar {
+        grid-column: auto;
+    }
+
+    #listaAgendamentos > li {
+        padding: 16px;
+    }
+
+    #listaAgendamentos button {
+        margin-right: 5px;
+    }
+}

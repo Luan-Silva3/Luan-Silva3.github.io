@@ -1,0 +1,193 @@
+:root {
+    --fundo: #f4f7fb;
+    --superficie: #ffffff;
+    --texto: #182230;
+    --texto-secundario: #667085;
+    --azul: #175cd3;
+    --azul-hover: #1849a9;
+    --borda: #e4e7ec;
+    --verde: #12b76a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+.topo {
+    background: #101828;
+    color: white;
+}
+
+.topo-conteudo {
+    max-width: 1100px;
+    min-height: 72px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.marca {
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.link-voltar {
+    color: #d1e0ff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.link-voltar:hover {
+    color: white;
+}
+
+.container {
+    width: min(100% - 32px, 800px);
+    margin: 36px auto;
+}
+
+.introducao {
+    margin-bottom: 24px;
+}
+
+.etiqueta {
+    color: var(--azul);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.introducao h1 {
+    margin: 6px 0 8px;
+    font-size: clamp(26px, 4vw, 34px);
+    letter-spacing: -0.8px;
+}
+
+.introducao p,
+.titulo-cartao p {
+    color: var(--texto-secundario);
+    margin: 0;
+    font-size: 14px;
+}
+
+.cartao {
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 26px;
+    box-shadow: 0 4px 14px rgba(16, 24, 40, 0.05);
+}
+
+.titulo-cartao {
+    margin-bottom: 24px;
+}
+
+.titulo-cartao h2 {
+    font-size: 19px;
+    margin: 0 0 5px;
+}
+
+/* Área onde o JavaScript cria os dias */
+
+#listaDias {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#listaDias > * {
+    min-width: 0;
+}
+
+/* Estilo dos campos que forem gerados dinamicamente */
+
+#listaDias label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#listaDias input[type="time"] {
+    min-height: 42px;
+    padding: 9px 10px;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    background: white;
+    color: var(--texto);
+    font: inherit;
+}
+
+#listaDias input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--azul);
+    cursor: pointer;
+}
+
+#listaDias input[type="time"]:focus {
+    outline: 2px solid rgba(23, 92, 211, 0.2);
+    border-color: var(--azul);
+}
+
+.botao-principal {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    margin-top: 24px;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--azul);
+    color: white;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.botao-principal:hover {
+    background: var(--azul-hover);
+}
+
+#mensagem {
+    margin: 14px 0 0;
+    font-size: 14px;
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+    .topo-conteudo {
+        padding: 15px 18px;
+    }
+
+    .marca {
+        font-size: 19px;
+    }
+
+    .link-voltar {
+        font-size: 12px;
+    }
+
+    .container {
+        width: calc(100% - 24px);
+        margin: 24px auto;
+    }
+
+    .cartao {
+        padding: 20px 16px;
+    }
+}

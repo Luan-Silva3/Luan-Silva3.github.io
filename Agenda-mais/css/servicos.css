@@ -1,0 +1,275 @@
+
+:root {
+    --fundo: #f4f7fb;
+    --superficie: #ffffff;
+    --texto: #182230;
+    --texto-secundario: #667085;
+    --azul: #175cd3;
+    --azul-hover: #1849a9;
+    --borda: #e4e7ec;
+    --sombra: 0 4px 14px rgba(16, 24, 40, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+.topo {
+    background: #101828;
+    color: white;
+    box-shadow: var(--sombra);
+}
+
+.topo-conteudo {
+    max-width: 1100px;
+    min-height: 72px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.marca {
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.link-voltar {
+    color: #d1e0ff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.link-voltar:hover {
+    color: white;
+}
+
+.container {
+    width: min(100% - 32px, 850px);
+    margin: 36px auto;
+}
+
+.introducao {
+    margin-bottom: 24px;
+}
+
+.etiqueta {
+    color: var(--azul);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.introducao h1 {
+    margin: 6px 0 8px;
+    font-size: clamp(26px, 4vw, 34px);
+    letter-spacing: -0.8px;
+}
+
+.introducao p,
+.titulo-cartao p {
+    color: var(--texto-secundario);
+    margin: 0;
+    font-size: 14px;
+}
+
+.cartao {
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 26px;
+    margin-bottom: 24px;
+    box-shadow: var(--sombra);
+}
+
+.titulo-cartao {
+    margin-bottom: 22px;
+}
+
+.titulo-cartao h2 {
+    font-size: 19px;
+    margin: 0 0 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    background: white;
+    color: var(--texto);
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(23, 92, 211, 0.12);
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #98a2b3;
+}
+
+.campos-duplos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.botao-principal {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--azul);
+    color: white;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.botao-principal:hover {
+    background: var(--azul-hover);
+}
+
+.botao-principal:active {
+    transform: scale(0.99);
+}
+
+#mensagem {
+    margin: 14px 0 0;
+    font-size: 14px;
+}
+
+.secao-lista {
+    margin-bottom: 40px;
+}
+
+#listaServicos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+#listaServicos li {
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    background: #fff;
+    overflow-wrap: anywhere;
+}
+
+#listaServicos li h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+#listaServicos li p {
+    margin: 0 0 10px;
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+#listaServicos li p:last-of-type {
+    color: var(--texto);
+    font-weight: 600;
+}
+
+#listaServicos li button {
+    margin-top: 8px;
+    padding: 9px 12px;
+    border: 1px solid #fecdca;
+    border-radius: 7px;
+    background: #fff5f4;
+    color: #b42318;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#listaServicos li button:hover {
+    background: #fee4e2;
+}
+
+@media (max-width: 600px) {
+    .topo-conteudo {
+        padding: 15px 18px;
+    }
+
+    .marca {
+        font-size: 19px;
+    }
+
+    .container {
+        width: calc(100% - 24px);
+        margin: 24px auto;
+    }
+
+    .cartao {
+        padding: 20px 16px;
+        border-radius: 12px;
+    }
+
+    .campos-duplos {
+        grid-template-columns: 1fr;
+    }
+
+    #listaServicos {
+        grid-template-columns: 1fr;
+    }
+
+    .link-voltar {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agenda Mais | Agendamentos</title>
+
+    <link rel="stylesheet" href="css/agendamentos.css">
+</head>
+<body>
+
+    <header class="topo">
+        <div class="topo-conteudo">
+            <a class="marca" href="dashboard.html">Agenda Mais</a>
+            <a class="link-voltar" href="dashboard.html">Voltar ao painel</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="introducao">
+            <span class="etiqueta">GERENCIAMENTO</span>
+            <h1>Meus agendamentos</h1>
+            <p>Acompanhe seus atendimentos e organize os compromissos do estabelecimento.</p>
+        </section>
+
+        <section id="resumoAgendamentos">
+            <article class="resumo-card pendente">
+                <span class="resumo-icone">◷</span>
+                <h2>Pendentes</h2>
+                <p id="totalPendentes">0</p>
+            </article>
+
+            <article class="resumo-card confirmado">
+                <span class="resumo-icone">✓</span>
+                <h2>Confirmados</h2>
+                <p id="totalConfirmados">0</p>
+            </article>
+
+            <article class="resumo-card concluido">
+                <span class="resumo-icone">✓</span>
+                <h2>Concluídos</h2>
+                <p id="totalConcluidos">0</p>
+            </article>
+
+            <article class="resumo-card cancelado">
+                <span class="resumo-icone">×</span>
+                <h2>Cancelados</h2>
+                <p id="totalCancelados">0</p>
+            </article>
+        </section>
+
+        <section class="cartao filtros">
+            <div class="titulo-cartao">
+                <h2>Filtrar compromissos</h2>
+                <p>Encontre agendamentos por data ou status.</p>
+            </div>
+
+            <div class="campos-filtro">
+                <div class="campo">
+                    <label for="filtroData">Data</label>
+                    <input type="date" id="filtroData">
+                </div>
+
+                <div class="campo">
+                    <label for="filtroStatus">Status</label>
+                    <select id="filtroStatus">
+                        <option value="todos">Todos os status</option>
+                        <option value="pendente">Pendentes</option>
+                        <option value="confirmado">Confirmados</option>
+                        <option value="cancelado">Cancelados</option>
+                        <option value="concluido">Concluídos</option>
+                    </select>
+                </div>
+
+                <button type="button" id="btnFiltrar">
+                    Buscar agendamentos
+                </button>
+            </div>
+
+            <p id="mensagem" aria-live="polite"></p>
+        </section>
+
+        <section class="cartao secao-compromissos">
+            <div class="titulo-cartao">
+                <h2>Compromissos</h2>
+                <p>Consulte e gerencie os atendimentos agendados.</p>
+            </div>
+
+            <ul id="listaAgendamentos"></ul>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/proteger-agendamentos.js"></script>
+    <script src="js/agendamentos.js"></script>
+
+</body>
+</html>
