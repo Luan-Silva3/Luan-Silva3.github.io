@@ -8,3 +8,23 @@
 .contact-section{padding-top:55px;padding-bottom:120px}.contact-box{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:60px}.contact-box h2{max-width:700px;margin-bottom:15px}.contact-box>p{max-width:600px;margin-bottom:25px}footer{max-width:var(--max);margin:auto;padding:25px 24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#68717e;font-size:11px}
 @media(max-width:800px){.nav{display:none;position:absolute;top:70px;left:20px;right:20px;flex-direction:column;gap:15px;padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:10px}.nav.open{display:flex}.menu-btn{display:block}.hero{grid-template-columns:1fr;padding-top:50px;gap:40px}.profile-card{justify-self:center;width:min(360px,100%)}.about-grid{grid-template-columns:1fr;gap:35px}.tech-grid,.projects{grid-template-columns:1fr}.project.featured{grid-column:auto;grid-template-columns:1fr}.featured .project-preview{min-height:240px}.contact-box{padding:40px 25px}}
 @media(max-width:500px){h1{letter-spacing:-2px}.section{padding:80px 20px}.hero{padding-left:20px;padding-right:20px}.tech-grid{grid-template-columns:1fr}.contact-box h2,.section-heading h2{letter-spacing:-1.5px}footer{padding:20px;gap:12px;flex-wrap:wrap}}
+
+
+.project-preview {
+    height: 240px;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.project-preview img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s ease;
+}
+
+.project:hover .project-preview img {
+    transform: scale(1.04);
+}

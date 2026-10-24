@@ -5,7 +5,8 @@ Portfólio pessoal para apresentar projetos e buscar oportunidades como Desenvol
 ## Projetos
 - Mantiqueira Drinks: https://luan-silva3.github.io/mantiqueira/
 - BR Kart Taubaté: https://luan-silva3.github.io/kart-br.html
-- NEXA: projeto pessoal em desenvolvimento para portfólio.
+- NEXA: https://luan-silva3.github.io/NEXA/login.
+- Agenda mais: https://luan-silva3.github.io/Agenda-mais
 
 ## Estrutura
 - `index.html`
