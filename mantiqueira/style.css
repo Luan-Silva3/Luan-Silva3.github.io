@@ -77,7 +77,7 @@ img { display: block; width: 100%; }
   z-index: -3;
   background:
     linear-gradient(180deg, rgba(5,7,5,.18), rgba(5,7,5,.2)),
-    url("https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=2200&q=90") center/cover;
+    url("./img/WhatsApp\ Image\ 2026-10-28\ at\ 10.15.18\ \(1\).jpeg") center/cover;
   transform: scale(1.02);
 }
 .hero-overlay {
@@ -177,7 +177,7 @@ img { display: block; width: 100%; }
   min-height: 680px;
   background:
     linear-gradient(180deg, rgba(8,9,7,.05), rgba(8,9,7,.15)),
-    url("https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=1300&q=90") center/cover;
+    url("./img/WhatsApp\ Image\ 2026-10-28\ at\ 10.15.18.jpeg") center/cover;
 }
 .feature-content { max-width: 550px; }
 .feature-content > p:not(.eyebrow) { color: #64665d; font-size: 15px; margin: 28px 0; }
@@ -186,7 +186,7 @@ img { display: block; width: 100%; }
 .check-list span { color: var(--green-dark); font-weight: 700; }
 
 .drinks-banner { min-height: 650px; position: relative; display: grid; place-items: center; color: white; text-align: center; isolation: isolate; }
-.drinks-banner-image { position: absolute; inset: 0; z-index: -2; background: url("https://images.unsplash.com/photo-1473973266408-ed4e27abdd47?auto=format&fit=crop&w=2200&q=90") center/cover; }
+.drinks-banner-image { position: absolute; inset: 0; z-index: -2; background: url("./img/WhatsApp\ Image\ 2026-10-28\ at\ 10.15.18\ \(1\).jpeg") center/cover; }
 .drinks-banner-overlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0,0,0,.48), rgba(0,0,0,.7)); }
 .drinks-banner-content h2 { margin: 0 0 32px; font-family: var(--serif); font-weight: 500; font-size: clamp(52px, 6vw, 84px); line-height: .98; letter-spacing: -.045em; }
 
@@ -247,9 +247,8 @@ img { display: block; width: 100%; }
 .footer-links { display: flex; gap: 25px; color: rgba(255,255,255,.55); font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }
 .footer-links a:hover { color: white; }
 .footer-bottom { display: flex; justify-content: space-between; padding-top: 18px; color: rgba(255,255,255,.35); font-size: 9px; text-transform: uppercase; letter-spacing: .1em; }
-.whatsapp-float { position: fixed; z-index: 15; right: 22px; bottom: 22px; }
-.whatsapp-float a { display: flex; align-items: center; gap: 14px; background: #172016; color: white; border: 1px solid rgba(255,255,255,.2); padding: 12px 14px 12px 17px; box-shadow: var(--shadow); font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
-.whatsapp-float b { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--green); font-size: 13px; }
+
+
 
 .reveal { opacity: 0; transform: translateY(25px); transition: opacity .75s ease, transform .75s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -303,3 +302,28 @@ img { display: block; width: 100%; }
   .whatsapp-float { right: 12px; bottom: 12px; }
   .whatsapp-float span { display: none; }
 }
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.whatsapp-btn:hover {
+  background-color: #20ba5a;
+  transform: scale(1.1);
+}
+
+

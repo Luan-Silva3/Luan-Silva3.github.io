@@ -104,7 +104,7 @@ function openModal(drink = null) {
   $('#imageFile').dataset.currentUrl = drink?.image_url || '';
   $('#imageFile').dataset.currentPath = drink?.image_path || '';
   $('#isAvailable').checked = drink ? drink.available : true;
-  preview();
+  previewSelectedImage();
 }
 
 function closeModal() {
